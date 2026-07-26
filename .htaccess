@@ -2,7 +2,9 @@
 # Ayush Codes - .htaccess
 # ===========================================
 
+Options +FollowSymLinks -MultiViews
 RewriteEngine On
+RewriteBase /
 
 # ===========================================
 # Remove .html extension - External Redirect
@@ -22,8 +24,8 @@ RewriteRule ^(.*)\.html$ /$1 [R=301,L]
 
 # Internally serve .html file when clean URL is requested
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.html -f
-RewriteRule ^(.*)$ $1.html [L]
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
 
 # ===========================================
 # Error Pages
@@ -36,29 +38,19 @@ ErrorDocument 404 /404
 # ===========================================
 
 <IfModule mod_headers.c>
-    # XSS Protection
     Header set X-XSS-Protection "1; mode=block"
-    
-    # Prevent MIME-type sniffing
     Header set X-Content-Type-Options "nosniff"
-    
-    # Clickjacking protection
     Header set X-Frame-Options "SAMEORIGIN"
-    
-    # Referrer policy
     Header set Referrer-Policy "strict-origin-when-cross-origin"
-    
-    # 1 year cache for static assets
+
     <FilesMatch "\.(ico|pdf|flv|avif|webp|jpg|jpeg|png|gif|svg|swf|mp4|woff2?)$">
         Header set Cache-Control "max-age=31536000, public"
     </FilesMatch>
-    
-    # 1 month cache for CSS and JS
+
     <FilesMatch "\.(css|js)$">
         Header set Cache-Control "max-age=2592000, public"
     </FilesMatch>
-    
-    # No cache for HTML
+
     <FilesMatch "\.(html)$">
         Header set Cache-Control "max-age=0, private, must-revalidate"
     </FilesMatch>
@@ -90,9 +82,3 @@ ErrorDocument 404 /404
 # ===========================================
 
 DirectoryIndex index.html
-
-# ===========================================
-# Custom 404 Error
-# ===========================================
-
-ErrorDocument 404 /404
