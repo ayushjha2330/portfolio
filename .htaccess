@@ -1,0 +1,98 @@
+# ===========================================
+# Ayush Codes - .htaccess
+# ===========================================
+
+RewriteEngine On
+
+# ===========================================
+# Remove .html extension - External Redirect
+# ===========================================
+
+# Redirect /index.html or /index to /
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
+
+# Redirect .html URLs to clean URLs
+RewriteCond %{THE_REQUEST} \.html [NC]
+RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+
+# ===========================================
+# Remove .html extension - Internal Rewrite
+# ===========================================
+
+# Internally serve .html file when clean URL is requested
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# ===========================================
+# Error Pages
+# ===========================================
+
+ErrorDocument 404 /404
+
+# ===========================================
+# Security Headers
+# ===========================================
+
+<IfModule mod_headers.c>
+    # XSS Protection
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Prevent MIME-type sniffing
+    Header set X-Content-Type-Options "nosniff"
+    
+    # Clickjacking protection
+    Header set X-Frame-Options "SAMEORIGIN"
+    
+    # Referrer policy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # 1 year cache for static assets
+    <FilesMatch "\.(ico|pdf|flv|avif|webp|jpg|jpeg|png|gif|svg|swf|mp4|woff2?)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+    
+    # 1 month cache for CSS and JS
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </FilesMatch>
+    
+    # No cache for HTML
+    <FilesMatch "\.(html)$">
+        Header set Cache-Control "max-age=0, private, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
+# ===========================================
+# Gzip Compression
+# ===========================================
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+    AddOutputFilterByType DEFLATE application/xml application/xhtml+xml application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ===========================================
+# Block Access to Hidden Files
+# ===========================================
+
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# ===========================================
+# Directory Index
+# ===========================================
+
+DirectoryIndex index.html
+
+# ===========================================
+# Custom 404 Error
+# ===========================================
+
+ErrorDocument 404 /404
