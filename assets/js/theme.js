@@ -1851,56 +1851,54 @@
 	let $ttContactForm = $("#tt-contact-form");
 
 	$ttContactForm.submit(function(e) {
-		e.preventDefault(); // Prevent default form submission.
+		e.preventDefault();
 
 		let $cfmContainer = $("#tt-contact-form-messages");
 		let $cfmContainerInner = $(".tt-cfm-inner");
 
-		// Clear previous messages and show loading indicator.
 		$cfmContainerInner.empty().html('<span class="tt-cfm-sending">Sending your message...</span>');
 
-		// Send email
-		const formData = $(this).serialize();
+		var name = $("#sender-name").val();
+		var email = $("#sender-email").val();
+		var about = $("#sender-option").val();
+		var message = $("#sender-message").val();
+
+		var payload = {
+			data: {
+				name: name,
+				email: email,
+				about: about,
+				message: message
+			}
+		};
+
 		$.ajax({
 			type: "POST",
-			url: "mail.php", // Path to your PHP script.
-			data: formData,
-			dataType: "json",
-
-		}).done(function(response) {
-
-			// Clear previous messages.
-			$cfmContainerInner.empty();
-
-			if (response.success) {
+			url: "https://sheetdb.io/api/v1/6pnxjsozkhsng",
+			data: JSON.stringify(payload),
+			contentType: "application/json",
+			success: function (response) {
+				$cfmContainerInner.empty();
+				if (response.created) {
+					$ttContactForm.addClass("cfm-submitted");
+					$cfmContainerInner.html('<span class="tt-cfm-success">Message sent successfully!</span>');
+					$ttContactForm.trigger("reset");
+					$(".tt-form-group").removeClass("tt-fg-typing");
+				} else {
+					$ttContactForm.addClass("cfm-submitted");
+					$cfmContainerInner.html('<span class="tt-cfm-error">Something went wrong. Please try again.</span>');
+				}
+				scrollToContactFormTop();
+			},
+			error: function () {
 				$ttContactForm.addClass("cfm-submitted");
-
-				// Display success message.
-				$cfmContainerInner.html('<span class="tt-cfm-success">' + response.message + '</span>'); // Look at the "mail.php" file to change this response message text.
-
-				$ttContactForm.trigger("reset"); // Reset the form.
-				$(".tt-form-group").removeClass("tt-fg-typing"); // Remove class from "tt-form-group" (for "tt-form-creative").
-			} else {
-				$ttContactForm.addClass("cfm-submitted");
-
-				// Display error message.
-				$cfmContainerInner.html('<span class="tt-cfm-error">' + response.message + '</span>'); // Look at the "mail.php" file to change this response message text.
+				$cfmContainerInner.empty().html('<span class="tt-cfm-error">Network error. Please try again later.</span>');
+				scrollToContactFormTop();
 			}
-
-			scrollToContactFormTop(); // Scroll to the form top.
-
-		}).fail(function() {
-			$ttContactForm.addClass("cfm-submitted");
-
-			// Clear previous messages and display AJAX error message.
-			$cfmContainerInner.empty().html('<span class="tt-cfm-error">An error occurred. Please try again later.</span>');
-
-			scrollToContactFormTop(); // Scroll to the form top.
 		});
 
-		// Scroll to the form top function.
 		function scrollToContactFormTop() {
-			if(!tt_isMobile) { // Not for mobile devices!
+			if(!tt_isMobile) {
 				if ($("body").hasClass("tt-smooth-scroll")) {
 					const cfmTopY = $ttContactForm.offset().top - $("body").offset().top - 240;
 					lenis.scrollTo(cfmTopY, { 
@@ -1915,7 +1913,6 @@
 			}
 		}
 
-		// Message close button click.
 		$(document).on("click", ".tt-cfm-close", function() {
 			if ($cfmContainerInner.find("span").length) {
 				$cfmContainerInner.find("span").remove();
