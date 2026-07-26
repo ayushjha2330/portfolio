@@ -1,0 +1,38 @@
+# Ayush Jha — Full Stack Web Developer & Digital Specialist
+
+> 19-year-old Full Stack Web Developer & Digital Specialist based in Delhi, India. 2+ years of experience, 50+ projects delivered.
+
+## Core Info
+
+- **Name:** Ayush Jha
+- **Title:** Full Stack Web Developer & Digital Specialist
+- **Location:** Delhi, India
+- **Website:** https://www.ayushcodes.site/
+- **Skills:** MERN Stack, Next.js, SEO, Graphic Design, Video Editing, Meta Ads
+- **Experience:** 2+ years | 50+ projects delivered
+
+## Pages
+
+- [Home](https://www.ayushcodes.site/) — Portfolio homepage with intro, stats, services, and recent work.
+- [About Me](https://www.ayushcodes.site/about-me) — Personal background, skills, tools, working process, and client testimonials.
+- [Services](https://www.ayushcodes.site/services) — Web development, SEO, graphic design, video editing, and Meta Ads services with pricing.
+- [Work](https://www.ayushcodes.site/work) — Portfolio of completed projects.
+- [MERN Stack Course](https://www.ayushcodes.site/mern-stack-course) — MERN Stack course details and enrollment.
+- [Digital Marketing Course](https://www.ayushcodes.site/digital-marketing-course) — Digital marketing course details and enrollment.
+- [Contact](https://www.ayushcodes.site/contact) — Contact form, email, phone, social links, and FAQ.
+- [FAQ](https://www.ayushcodes.site/faq) — Frequently asked questions.
+
+## Services
+
+- **Web Development** — MERN stack, Next.js, responsive websites, web apps, and custom solutions.
+- **SEO (Search Engine Optimization)** — On-page, off-page, technical SEO, keyword research, and analytics.
+- **Graphic Design** — Logos, branding, social media creatives, banners, and UI/UX design.
+- **Video Editing** — Professional video editing, motion graphics, transitions, and effects.
+- **Meta Ads** — Facebook & Instagram ad campaigns, audience targeting, budget optimization, and performance tracking.
+
+## Contact
+
+- **Email:** ayushjha@ayushcodes.site
+- **Phone:** +91 9625305155
+- **Location:** Delhi, India
+- **Social:** Available on the website footer and contact page.
