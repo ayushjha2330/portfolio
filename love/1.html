@@ -487,6 +487,104 @@
     line-height:1.7;
   }
 
+  /* Photo section */
+  .photo-scroll-hint{
+    margin-top: 60px;
+    font-size:11px;
+    letter-spacing:4px;
+    color: var(--ink-dim);
+    text-transform:uppercase;
+    opacity:0;
+    animation: fadeUp 1s ease forwards .58s;
+  }
+
+  .photo-frame{
+    margin-top: 24px;
+    width: 100%;
+    max-width: 320px;
+    background: linear-gradient(160deg, rgba(224,164,88,0.14), rgba(18,14,36,0.6));
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 16px 16px 26px;
+    box-shadow: 0 0 70px rgba(224,164,88,0.10), 0 20px 50px rgba(0,0,0,0.4);
+    transform: rotate(-2.5deg);
+    transition: transform .4s ease, box-shadow .4s ease;
+    opacity:0;
+    animation: fadeUp 1s ease forwards .62s;
+    position: relative;
+  }
+
+  .photo-frame:hover{
+    transform: rotate(0deg) scale(1.02);
+    box-shadow: 0 0 90px rgba(224,164,88,0.18), 0 24px 60px rgba(0,0,0,0.45);
+  }
+
+  .photo-frame::before{
+    content:"";
+    position:absolute;
+    top:-10px; left:50%;
+    transform: translateX(-50%) rotate(-3deg);
+    width: 70px; height: 22px;
+    background: rgba(224,164,88,0.18);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+  }
+
+  .photo-inner{
+    position:relative;
+    width:100%;
+    aspect-ratio: 4 / 5;
+    border-radius: 14px;
+    overflow:hidden;
+    background:
+      linear-gradient(160deg, rgba(224,164,88,0.10), rgba(255,255,255,0.02)),
+      var(--purple);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .photo-inner img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    display:block;
+  }
+
+  .photo-placeholder{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap: 10px;
+    color: var(--ink-dim);
+    padding: 20px;
+    text-align:center;
+  }
+
+  .photo-placeholder svg{
+    width: 34px;
+    height: 34px;
+    color: var(--gold);
+    opacity:.8;
+  }
+
+  .photo-placeholder span{
+    font-size: 11px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    line-height:1.6;
+  }
+
+  .photo-caption{
+    margin-top: 14px;
+    text-align:center;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-weight:600;
+    font-size: 20px;
+    color: var(--gold-soft);
+  }
+
   @keyframes fadeUp{
     from{ opacity:0; transform: translateY(14px); }
     to{ opacity:1; transform: translateY(0); }
@@ -511,6 +609,7 @@
     .countdown-grid{ gap:4px; }
     .letter-header{ padding: 18px; gap:12px; }
     .letter-body-inner{ padding: 22px 18px 26px; }
+    .photo-frame{ max-width: 260px; }
   }
 </style>
 </head>
@@ -528,6 +627,26 @@
   </h1>
 
   <p class="sub">of all the people this day could belong to, it's you. always you.</p>
+
+  <div class="photo-scroll-hint">this is you</div>
+  <div class="photo-frame" id="photoFrame">
+    <div class="photo-inner" id="photoInner">
+      <!--
+        APNI GIRLFRIEND KI PHOTO YAHAN DAALNE KE LIYE:
+        Neeche wali <img> line ka comment hata dein aur src me apni image ka
+        path/link daal dein (jaise "sohani.jpg" agar wahi folder me rakhi ho,
+        ya koi online image link).
+      -->
+      
+      <div class="photo-placeholder" id="photoPlaceholder">
+     <img src="../love/images/sohani.png" alt="Sohani">
+      </div>
+    </div>
+    <label class="photo-caption" id="photoUploadLabel" for="photoUploadInput" style="cursor:pointer; display:block;">
+      sohani &#9825;
+    </label>
+    <input type="file" id="photoUploadInput" accept="image/*" style="display:none;">
+  </div>
 
   <div class="countdown-card">
     <div class="countdown-label" id="countdownLabel">Until 21 August</div>
@@ -668,6 +787,41 @@
     if(letterCard.classList.contains('open')){
       letterBody.style.maxHeight = letterBody.scrollHeight + 'px';
     }
+  });
+
+  // ---- Photo upload (client-side preview, stored locally in browser) ----
+  const photoInput = document.getElementById('photoUploadInput');
+  const photoInner = document.getElementById('photoInner');
+  const photoPlaceholder = document.getElementById('photoPlaceholder');
+
+  // restore previously chosen photo (this device/browser only)
+  try{
+    const saved = localStorage.getItem('sohaniPhoto');
+    if(saved){
+      renderPhoto(saved);
+    }
+  }catch(e){}
+
+  function renderPhoto(dataUrl){
+    photoPlaceholder.style.display = 'none';
+    let img = photoInner.querySelector('img');
+    if(!img){
+      img = document.createElement('img');
+      img.alt = 'Sohani';
+      photoInner.appendChild(img);
+    }
+    img.src = dataUrl;
+  }
+
+  photoInput.addEventListener('change', (e) => {
+    const file = e.target.files && e.target.files[0];
+    if(!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      renderPhoto(reader.result);
+      try{ localStorage.setItem('sohaniPhoto', reader.result); }catch(e){}
+    };
+    reader.readAsDataURL(file);
   });
 
   // ---- Wish section ----
