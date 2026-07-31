@@ -314,6 +314,179 @@
     animation: fadeUp 1s ease forwards 1.4s;
   }
 
+  /* Wish section */
+  .wish-scroll-hint{
+    margin-top: 70px;
+    font-size:11px;
+    letter-spacing:4px;
+    color: var(--ink-dim);
+    text-transform:uppercase;
+    opacity:0;
+    animation: fadeUp 1s ease forwards 1.55s;
+  }
+
+  .wish-card{
+    margin-top: 26px;
+    width:100%;
+    max-width: 560px;
+    background: rgba(18,14,36,0.6);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 30px 26px 32px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    box-shadow: 0 0 90px rgba(224,164,88,0.06);
+    opacity:0;
+    animation: fadeUp 1s ease forwards 1.7s;
+  }
+
+  .wish-eyebrow{
+    font-size:10px;
+    letter-spacing:3px;
+    color: var(--ink-dim);
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+
+  .wish-title{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size: clamp(1.4rem, 4vw, 1.9rem);
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+
+  .wish-sub{
+    font-size: 14px;
+    line-height:1.75;
+    color: var(--ink-dim);
+    max-width: 420px;
+    margin: 0 auto 26px;
+  }
+
+  .wish-form{
+    display:flex;
+    flex-direction:column;
+    gap: 16px;
+    align-items:center;
+  }
+
+  .wish-textarea{
+    width:100%;
+    min-height: 90px;
+    resize: vertical;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px 16px;
+    color: var(--ink);
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    line-height:1.6;
+    outline:none;
+    transition: border-color .3s ease, box-shadow .3s ease;
+  }
+
+  .wish-textarea::placeholder{ color: var(--ink-dim); opacity:.8; }
+
+  .wish-textarea:focus{
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(224,164,88,0.12);
+  }
+
+  .wish-submit{
+    appearance:none;
+    border: 1px solid var(--gold);
+    background: transparent;
+    color: var(--gold-soft);
+    font-family:'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform:uppercase;
+    padding: 13px 30px;
+    border-radius: 999px;
+    cursor:pointer;
+    transition: background .3s ease, color .3s ease, transform .2s ease;
+  }
+
+  .wish-submit:hover{
+    background: var(--gold);
+    color: var(--bg-deep);
+  }
+
+  .wish-submit:active{ transform: scale(0.97); }
+
+  .wish-submit:disabled{
+    opacity:.5;
+    cursor:not-allowed;
+  }
+
+  .wish-star-trail{
+    position:absolute;
+    left:50%;
+    bottom: 40px;
+    width: 6px;
+    height: 6px;
+    border-radius:50%;
+    background: var(--gold-soft);
+    box-shadow: 0 0 12px 4px rgba(241,200,138,0.9);
+    opacity:0;
+    pointer-events:none;
+  }
+
+  .wish-star-trail.launch{
+    animation: shootUp 1.4s cubic-bezier(.2,.7,.3,1) forwards;
+  }
+
+  @keyframes shootUp{
+    0%{
+      opacity:1;
+      transform: translate(-50%, 0) scale(1);
+    }
+    70%{
+      opacity:1;
+    }
+    100%{
+      opacity:0;
+      transform: translate(-50%, -420px) scale(0.2);
+    }
+  }
+
+  .wish-confirm{
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    gap: 10px;
+    padding: 10px 0 4px;
+  }
+
+  .wish-confirm.show{
+    display:flex;
+    animation: fadeUp .7s ease forwards;
+  }
+
+  .wish-confirm-icon{
+    font-size: 26px;
+    color: var(--gold);
+  }
+
+  .wish-confirm-title{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-weight:600;
+    font-size: 20px;
+    color: var(--gold-soft);
+  }
+
+  .wish-confirm-sub{
+    font-size: 13px;
+    color: var(--ink-dim);
+    max-width: 340px;
+    line-height:1.7;
+  }
+
   @keyframes fadeUp{
     from{ opacity:0; transform: translateY(14px); }
     to{ opacity:1; transform: translateY(0); }
@@ -410,6 +583,34 @@
   </div>
 
   <div class="tap-hint">Tap to open</div>
+
+  <div class="wish-scroll-hint">one more thing</div>
+
+  <div class="wish-card" id="wishCard">
+    <div class="wish-eyebrow">Make A Wish</div>
+    <div class="wish-title">whatever you want, i'll make it happen.</div>
+    <p class="wish-sub">no conditions, no "let's see." write it down, however big or small. i mean it.</p>
+
+    <form class="wish-form" id="wishForm">
+      <textarea
+        class="wish-textarea"
+        id="wishInput"
+        placeholder="i wish..."
+        maxlength="400"
+        required
+      ></textarea>
+      <button type="submit" class="wish-submit" id="wishSubmit">send it to me</button>
+    </form>
+
+    <div class="wish-confirm" id="wishConfirm">
+      <div class="wish-confirm-icon">&#10022;</div>
+      <div class="wish-confirm-title">sent. consider it done already.</div>
+      <p class="wish-confirm-sub">your wish just became my to-do list. i'll take it from here.</p>
+    </div>
+
+    <div class="wish-star-trail" id="wishStar"></div>
+  </div>
+
   <div class="heart">&#9825;</div>
   <div class="footer-meta">01 August · For Sohani</div>
 </div>
@@ -466,6 +667,49 @@
   window.addEventListener('resize', () => {
     if(letterCard.classList.contains('open')){
       letterBody.style.maxHeight = letterBody.scrollHeight + 'px';
+    }
+  });
+
+  // ---- Wish section ----
+  const WISH_API = "https://sheetdb.io/api/v1/dm8b3q71289wu";
+
+  const wishForm = document.getElementById('wishForm');
+  const wishInput = document.getElementById('wishInput');
+  const wishSubmit = document.getElementById('wishSubmit');
+  const wishConfirm = document.getElementById('wishConfirm');
+  const wishStar = document.getElementById('wishStar');
+
+  wishForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const wishText = wishInput.value.trim();
+    if(!wishText) return;
+
+    wishSubmit.disabled = true;
+
+    // shooting star animation
+    wishStar.classList.remove('launch');
+    void wishStar.offsetWidth; // restart animation
+    wishStar.classList.add('launch');
+
+    try {
+      const res = await fetch(WISH_API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ data: { wish: wishText } })
+      });
+
+      if(!res.ok) throw new Error('sheet error');
+
+      setTimeout(() => {
+        wishForm.style.display = 'none';
+        wishConfirm.classList.add('show');
+      }, 900);
+    } catch(err) {
+      wishSubmit.disabled = false;
+      wishStar.classList.remove('launch');
+      wishInput.placeholder = "hmm, it didn't go through. try again?";
+      wishInput.value = wishText;
+      wishInput.focus();
     }
   });
 
