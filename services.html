@@ -6,16 +6,17 @@
 		<title>Services | Ayush Jha - Full Stack Web Developer & Digital Specialist</title>
 
 		<meta charset="utf-8">
-		<meta name="description" content="Professional web development, SEO, graphic design, video editing, and Meta Ads services by Ayush Jha. Boost your online presence with result-driven digital solutions.">
+		<meta name="description" content="Web development, SEO, graphic design, video editing & Meta Ads services by Ayush Jha, Delhi. Result-driven digital solutions for your business.">
 <meta name="author" content="Ayush Jha">
 		<meta name="keywords" content="web development services, SEO services, graphic design, video editing, Meta Ads, digital marketing services Delhi">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta property="og:title" content="Services | Ayush Jha - Full Stack Web Developer &amp; Digital Specialist">
-		<meta property="og:description" content="Professional web development, SEO, graphic design, video editing, and Meta Ads services by Ayush Jha.">
+		<meta property="og:description" content="Web development, SEO, graphic design, video editing &amp; Meta Ads services by Ayush Jha, Delhi.">
 		<meta property="og:image" content="https://www.ayushcodes.site/assets/img/ayush.avif">
 		<meta property="og:url" content="https://www.ayushcodes.site/services">
 		<meta property="og:type" content="website">
+		<meta property="og:locale" content="en_IN">
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:title" content="Services | Ayush Jha">
 		<meta name="twitter:description" content="Web development, SEO, design, video editing, and Meta Ads services by Ayush Jha.">
@@ -23,6 +24,96 @@
 		<link rel="canonical" href="https://www.ayushcodes.site/services">
 		<meta name="robots" content="index, follow">
 		<meta name="theme-color" content="#0e0e0e">
+
+		<!-- Added: this page had NO schema. Service schema (one entry per offering) -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@graph": [
+					{
+						"@type": "Service",
+						"serviceType": "Web Development",
+						"provider": { "@type": "Person", "name": "Ayush Jha" },
+						"areaServed": "IN",
+						"description": "Full stack web development using MERN Stack, Next.js, Bootstrap, and Tailwind CSS to build fast, modern, and scalable web applications."
+					},
+					{
+						"@type": "Service",
+						"serviceType": "Search Engine Optimization",
+						"provider": { "@type": "Person", "name": "Ayush Jha" },
+						"areaServed": "IN",
+						"description": "On-page, technical, and local SEO services including keyword research, competitor analysis, technical audits, and schema markup to grow organic traffic."
+					},
+					{
+						"@type": "Service",
+						"serviceType": "Graphic Design",
+						"provider": { "@type": "Person", "name": "Ayush Jha" },
+						"areaServed": "IN",
+						"description": "Visual design services including social media graphics, logos, banners, and brand kits using Canva and AI generation tools."
+					},
+					{
+						"@type": "Service",
+						"serviceType": "Video Editing",
+						"provider": { "@type": "Person", "name": "Ayush Jha" },
+						"areaServed": "IN",
+						"description": "Professional video editing using DaVinci Resolve including color grading, audio cleanup, and motion graphics for YouTube, Instagram Reels, and ad campaigns."
+					},
+					{
+						"@type": "Service",
+						"serviceType": "Meta Ads Management",
+						"provider": { "@type": "Person", "name": "Ayush Jha" },
+						"areaServed": "IN",
+						"description": "Facebook and Instagram ad campaign management via Meta Business Suite and Ads Manager, including pixel setup, audience targeting, and A/B testing."
+					}
+				]
+			}
+		</script>
+
+		<!-- Added: FAQ schema for AEO / featured snippets -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "FAQPage",
+				"mainEntity": [
+					{
+						"@type": "Question",
+						"name": "What services does Ayush Jha offer?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Ayush Jha offers full stack web development (MERN Stack, Next.js), SEO, graphic design, video editing, and Meta Ads management for businesses in Delhi and beyond."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "Does Ayush Jha work with businesses outside Delhi?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Yes, all services are delivered remotely and Ayush Jha works with clients across India."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "Can one person handle both web development and digital marketing?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Yes. Ayush Jha combines full stack development skills with SEO, Meta Ads, and design so a single point of contact can handle a business's complete digital presence."
+						}
+					}
+				]
+			}
+		</script>
+
+		<!-- Added: Breadcrumb schema -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "BreadcrumbList",
+				"itemListElement": [
+					{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.ayushcodes.site/" },
+					{ "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.ayushcodes.site/services" }
+				]
+			}
+		</script>
 
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -246,7 +337,8 @@
 
 									<p class="text-lg">I build fast, responsive, and modern web applications using MERN stack, Next.js, Bootstrap, and Tailwind CSS to ensure a great user experience.</p>
 
-									<p>In today's fast-paced digital world, having a clear and actionable strategy is key to standing out. I specialize in crafting data-driven digital strategies tailored to your unique business goals. Whether you're looking to grow your online presence, improve customer engagement, or drive conversions, I work closely with you to identify opportunities and create a roadmap for success. From audience analysis and competitive research to defining KPIs and optimizing digital channels, I ensure your strategy is not only innovative but also measurable and results-oriented. Let's turn your vision into a digital reality.</p>
+									<!-- FIXED: was mismatched "digital strategy/KPI" copy leftover from template -->
+									<p>From portfolio sites to full-scale SaaS platforms and e-commerce stores, I handle the entire development process — clean, maintainable code on the backend (Node.js, Express, MongoDB) paired with pixel-perfect, responsive frontends (React, Next.js). Every build is optimized for speed, SEO, and cross-device performance from day one, so your site is ready to rank and convert as soon as it goes live.</p>
 									
 								</div> 
 							</div>
@@ -374,12 +466,40 @@
 
 									<p class="text-lg">I set up and optimize high-converting Facebook and Instagram ad campaigns using Meta Business Suite and Ads Manager to boost your sales.</p>
 
-									<p>Innovative products start with thoughtful design. I specialize in creating products that solve real problems and deliver exceptional user experiences. From initial concept development and user research to prototyping and final design, I focus on combining functionality, aesthetics, and usability to create solutions that users love. Whether it's a physical product, a digital tool, or something in between, I'll work with you to design something that not only meets your business goals but also exceeds user expectations. Let's create products that make an impact.</p>
+									<!-- FIXED: was completely unrelated "product design" copy leftover from template -->
+									<p>End-to-end campaign management is the goal — from pixel setup and custom audience building to ad creative selection, copywriting, and A/B testing. I continuously monitor performance and reallocate budget toward what's actually converting, so your ad spend goes toward generating real leads and sales, not just impressions.</p>
 									
 								</div> 
 							</div>
 
 						</div> 
+					</div>
+
+					<!-- Added: FAQ section for AEO -->
+					<div class="tt-section padding-top-xlg-120 border-top">
+						<div class="tt-section-inner tt-wrap max-width-1600">
+
+							<div class="tt-heading tt-heading-xxlg">
+								<h3 class="tt-heading-subtitle tt-text-reveal">FAQs</h3>
+								<h2 class="tt-heading-title tt-text-reveal">Common Questions</h2>
+							</div>
+
+							<div class="tt-row margin-top-30">
+								<div class="tt-col-lg-6 margin-bottom-30">
+									<h4>What services does Ayush Jha offer?</h4>
+									<p>Full stack web development (MERN Stack, Next.js), SEO, graphic design, video editing, and Meta Ads management — for businesses in Delhi and across India.</p>
+								</div>
+								<div class="tt-col-lg-6 margin-bottom-30">
+									<h4>Does Ayush Jha work with businesses outside Delhi?</h4>
+									<p>Yes, all services are delivered remotely for clients across India.</p>
+								</div>
+								<div class="tt-col-lg-6 margin-bottom-30">
+									<h4>Can one person handle both development and marketing?</h4>
+									<p>Yes — combining development skills with SEO, Meta Ads, and design means a single point of contact can manage your entire digital presence.</p>
+								</div>
+							</div>
+
+						</div>
 					</div>
 					
 					<div class="tt-section padding-top-xlg-120 padding-bottom-xlg-120 border-top">
@@ -438,7 +558,7 @@
 									<h5 class="tt-footer-widget-heading">Contact</h5>
 									<ul class="tt-footer-widget-list">
 										<li>
-											<a href="https://maps.google.com/?q=Sarup+Vihar,+Burari,+Delhi" class="tt-link" target="_blank" rel="nofollow noopener">Sarup Vihar, Burari,<br> Delhi, India</a>
+											<a href="https://maps.google.com/?q=Sarup+Vihar,+Burari,+Delhi" class="tt-link" target="_blank" rel="nofollow noopener" itemprop="address">Sarup Vihar, Burari,<br> Delhi, India</a>
 										</li>
 										<li><a href="mailto:ayushcodes30@gmail.com" class="tt-link">ayushcodes30@gmail.com</a></li>
 										<li><a href="tel:+917428276525" class="tt-link"> +91 74282 76525</a></li>
@@ -471,7 +591,7 @@
 										</li>
 										<li>
 											<div class="tt-footer-copyright">
-												© <span class="tt-copyright-year"></span> <a href="https://www.ayushcodes.site/" class="tt-link" target="_blank" rel="nofollow noopener"> Ayush Jha</a><br> 
+												&copy; <span class="tt-copyright-year"></span> <a href="https://www.ayushcodes.site/" class="tt-link" target="_blank" rel="nofollow noopener"> Ayush Jha</a><br> 
 												All Rights Reserved
 											</div> 
 										</li>

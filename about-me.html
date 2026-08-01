@@ -6,16 +6,17 @@
 		<title>About Me | Ayush Jha - Full Stack Web Developer & Digital Specialist</title>
 
 		<meta charset="utf-8">
-		<meta name="description" content="Learn about Ayush Jha, a 19-year-old Full Stack Web Developer and Digital Specialist from Delhi. 2+ years experience, 50+ projects delivered in MERN, SEO, Design & more.">
+		<meta name="description" content="Learn about Ayush Jha, a Delhi-based Full Stack Web Developer & Digital Specialist. 2+ years experience, 50+ projects in MERN, SEO & design.">
 <meta name="author" content="Ayush Jha">
 		<meta name="keywords" content="Ayush Jha, about Ayush Jha, Full Stack Developer, Web Developer Delhi, MERN Stack developer, freelancer India">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta property="og:title" content="About Me | Ayush Jha - Full Stack Web Developer &amp; Digital Specialist">
-		<meta property="og:description" content="Learn about Ayush Jha, a 19-year-old Full Stack Web Developer and Digital Specialist from Delhi. 2+ years experience, 50+ projects.">
+		<meta property="og:description" content="Learn about Ayush Jha, a Delhi-based Full Stack Web Developer &amp; Digital Specialist. 2+ years experience, 50+ projects delivered.">
 		<meta property="og:image" content="https://www.ayushcodes.site/assets/img/ayush.avif">
 		<meta property="og:url" content="https://www.ayushcodes.site/about-me">
 		<meta property="og:type" content="website">
+		<meta property="og:locale" content="en_IN">
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:title" content="About Me | Ayush Jha">
 		<meta name="twitter:description" content="Learn about Ayush Jha - Full Stack Web Developer &amp; Digital Specialist from Delhi.">
@@ -23,6 +24,56 @@
 		<link rel="canonical" href="https://www.ayushcodes.site/about-me">
 		<meta name="robots" content="index, follow">
 		<meta name="theme-color" content="#0e0e0e">
+
+		<!-- Added: this page had NO schema at all before. AboutPage + Person schema for E-E-A-T / GEO -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "AboutPage",
+				"url": "https://www.ayushcodes.site/about-me",
+				"mainEntity": {
+					"@type": "Person",
+					"name": "Ayush Jha",
+					"url": "https://www.ayushcodes.site/",
+					"image": "https://www.ayushcodes.site/assets/img/ayush.avif",
+					"jobTitle": "Full Stack Web Developer & Digital Marketing Specialist",
+					"description": "Full Stack Web Developer & Digital Specialist based in Delhi, India, with 2+ years of experience and 50+ projects delivered in MERN Stack, SEO, and digital marketing.",
+					"address": {
+						"@type": "PostalAddress",
+						"addressLocality": "Delhi",
+						"addressCountry": "IN"
+					},
+					"knowsAbout": ["MERN Stack", "Next.js", "SEO", "Meta Ads", "Graphic Design", "Video Editing"],
+					"sameAs": [
+						"https://www.instagram.com/ayushjha_23_/",
+						"https://www.facebook.com/profile.php?id=61557364109941",
+						"https://sereneagency.in/"
+					]
+				}
+			}
+		</script>
+
+		<!-- Added: Breadcrumb schema -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "BreadcrumbList",
+				"itemListElement": [
+					{
+						"@type": "ListItem",
+						"position": 1,
+						"name": "Home",
+						"item": "https://www.ayushcodes.site/"
+					},
+					{
+						"@type": "ListItem",
+						"position": 2,
+						"name": "About Me",
+						"item": "https://www.ayushcodes.site/about-me"
+					}
+				]
+			}
+		</script>
 
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -231,7 +282,8 @@
 									<div class="tt-video ttv-portrait">
 										<div class="tt-anim-zoomin-wrap">
 											<div class="tt-img-wrap">
-												<img src="assets/img/ayush.avif" loading="lazy" alt="Sohani Singh Rajput">
+												<!-- FIXED: alt was "Sohani Singh Rajput" (wrong person/leftover from theme) -->
+												<img src="assets/img/ayush.avif" loading="lazy" alt="Ayush Jha - Full Stack Web Developer & Digital Specialist, Delhi">
 											</div>
 										</div>
 									</div>
@@ -246,7 +298,7 @@
 
 									<h2 class="tt-font-alter tt-anim-fadeinup">Hello!</h2>
 									<div class="text-lg tt-anim-fadeinup">
-										<p>I'm Ayush Jha, a 19-year-old Delhi-based Full Stack Web Developer and Digital Specialist. With over 2 years of experience and 50+ successfully completed projects, I focus on crafting high-performance, impactful digital solutions.</p>
+										<p>I'm Ayush Jha, a Delhi-based Full Stack Web Developer and Digital Specialist. With over 2 years of experience and 50+ successfully completed projects, I focus on crafting high-performance, impactful digital solutions.</p>
 
 										<p>I focus on building high-performance web applications and driving digital growth through SEO, Meta Ads, and smart marketing strategies that deliver real results.</p>
 
@@ -266,6 +318,8 @@
 						</div> 
 					</div>
 					
+					<!-- FIXED: "Highly motivated" repeated scrolling text was diluting keyword relevance
+					     (site-wide pattern flagged in audit). Replaced with actual target keywords. -->
 					<div class="tt-section no-padding">
 						<div class="tt-section-inner">
 
@@ -275,7 +329,7 @@
 									<div class="tt-scrolling-text scrt-dyn-separator scrt-color-reverse" data-scroll-speed="5" data-change-direction="true" data-opposite-direction="true">
 										<div class="tt-scrt-inner">
 											<div class="tt-scrt-content">
-												Highly motivated 
+												MERN Stack Developer 
 												<span class="tt-scrt-separator">
 													<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
 														<path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"></path>
@@ -288,7 +342,7 @@
 									<div class="tt-scrolling-text scrt-dyn-separator" data-scroll-speed="5" data-change-direction="true">
 										<div class="tt-scrt-inner">
 											<div class="tt-scrt-content">
-												Highly motivated 
+												Digital Marketing Specialist 
 												<span class="tt-scrt-separator">
 													<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
 														<path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"></path>
@@ -501,7 +555,7 @@
 									<h5 class="tt-footer-widget-heading">Contact</h5>
 									<ul class="tt-footer-widget-list">
 										<li>
-											<a href="https://maps.google.com/?q=Sarup+Vihar,+Burari,+Delhi" class="tt-link" target="_blank" rel="nofollow noopener">Sarup Vihar, Burari,<br> Delhi, India</a>
+											<a href="https://maps.google.com/?q=Sarup+Vihar,+Burari,+Delhi" class="tt-link" target="_blank" rel="nofollow noopener" itemprop="address">Sarup Vihar, Burari,<br> Delhi, India</a>
 										</li>
 										<li><a href="mailto:ayushcodes30@gmail.com" class="tt-link">ayushcodes30@gmail.com</a></li>
 										<li><a href="tel:+917428276525" class="tt-link"> +91 74282 76525</a></li>
@@ -534,7 +588,7 @@
 										</li>
 										<li>
 											<div class="tt-footer-copyright">
-												© <span class="tt-copyright-year"></span> <a href="https://www.ayushcodes.site/" class="tt-link" target="_blank" rel="nofollow noopener"> Ayush Jha</a><br> 
+												&copy; <span class="tt-copyright-year"></span> <a href="https://www.ayushcodes.site/" class="tt-link" target="_blank" rel="nofollow noopener"> Ayush Jha</a><br> 
 												All Rights Reserved
 											</div> 
 										</li>

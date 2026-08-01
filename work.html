@@ -17,6 +17,7 @@
 	<meta property="og:image" content="https://www.ayushcodes.site/assets/img/ayush.avif">
 	<meta property="og:url" content="https://www.ayushcodes.site/work">
 	<meta property="og:type" content="website">
+	<meta property="og:locale" content="en_IN">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Work | Ayush Jha">
 	<meta name="twitter:description" content="Portfolio of Ayush Jha - Web Development, SEO, Design, Video, and Ads projects.">
@@ -24,6 +25,48 @@
 	<link rel="canonical" href="https://www.ayushcodes.site/work">
 	<meta name="robots" content="index, follow">
 	<meta name="theme-color" content="#0e0e0e">
+
+	<!-- Added: this page had NO schema. CollectionPage + ItemList of portfolio projects -->
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "CollectionPage",
+			"name": "Ayush Jha - Portfolio",
+			"url": "https://www.ayushcodes.site/work",
+			"about": {
+				"@type": "Person",
+				"name": "Ayush Jha"
+			},
+			"mainEntity": {
+				"@type": "ItemList",
+				"itemListElement": [
+					{ "@type": "ListItem", "position": 1, "name": "Meducare Hospital", "url": "https://www.meducare.in/" },
+					{ "@type": "ListItem", "position": 2, "name": "Suryavansh Foundation Trust", "url": "https://www.suryavanshfoundationtrust.com/" },
+					{ "@type": "ListItem", "position": 3, "name": "RevoExp", "url": "https://www.revoexp.com/" },
+					{ "@type": "ListItem", "position": 4, "name": "Indian Human Rights", "url": "https://www.internationalhumanrights.in/" },
+					{ "@type": "ListItem", "position": 5, "name": "Moksh Mortuary", "url": "https://mokshmortuary.in/" },
+					{ "@type": "ListItem", "position": 6, "name": "Paisaloo", "url": "https://paisaloo.in/" },
+					{ "@type": "ListItem", "position": 7, "name": "RS Skin & Hair Transplant Clinic", "url": "https://rsskinandhairclinic.com/" },
+					{ "@type": "ListItem", "position": 8, "name": "GodSend Tortoise", "url": "https://www.godsendtortoise.com/" },
+					{ "@type": "ListItem", "position": 9, "name": "Rastra News 24", "url": "https://www.rashtranews24.com/" },
+					{ "@type": "ListItem", "position": 10, "name": "100Ten Group", "url": "https://100tengroup.com/" },
+					{ "@type": "ListItem", "position": 11, "name": "CCDM", "url": "https://ccdm.in/" }
+				]
+			}
+		}
+	</script>
+
+	<!-- Added: Breadcrumb schema -->
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "BreadcrumbList",
+			"itemListElement": [
+				{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.ayushcodes.site/" },
+				{ "@type": "ListItem", "position": 2, "name": "Work", "item": "https://www.ayushcodes.site/work" }
+			]
+		}
+	</script>
 
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -246,6 +289,7 @@
 
 								<div class="tt-grid-items-wrap isotope-items-wrap">
 
+									<!-- FIXED: alt was "Acharya Educare website" — did not match meducare.in -->
 									<div class="tt-grid-item isotope-item webdev">
 										<div class="ttgr-item-inner">
 											<div class="portfolio-grid-item">
@@ -255,7 +299,7 @@
 														<div class="pgi-image-inner tt-anim-zoomin">
 															<figure class="pgi-image ttgr-height">
 																<img src="assets/img/project/6.avif"
-																	loading="lazy" alt="Acharya Educare website by Ayush Jha web developer">
+																	loading="lazy" alt="Meducare Hospital website by Ayush Jha web developer">
 															</figure>
 														</div>
 													</div>
@@ -265,6 +309,7 @@
 										</div>
 									</div>
 									
+									<!-- FIXED: alt was "IMAT Preparation Portal website" — did not match suryavanshfoundationtrust.com -->
 									<div class="tt-grid-item isotope-item webdev">
 										<div class="ttgr-item-inner">
 											<div class="portfolio-grid-item">
@@ -274,7 +319,7 @@
 														<div class="pgi-image-inner tt-anim-zoomin">
 															<figure class="pgi-image ttgr-height">
 																<img src="assets/img/project/4.avif"
-																	loading="lazy" alt="IMAT Preparation Portal website by Ayush Jha">
+																	loading="lazy" alt="Suryavansh Foundation Trust website by Ayush Jha web developer">
 															</figure>
 														</div>
 													</div>
@@ -284,6 +329,7 @@
 										</div>
 									</div>
 									
+									<!-- FIXED: alt was "JRF Kashmir Academy website" — did not match revoexp.com -->
 									<div class="tt-grid-item isotope-item webdev">
 										<div class="ttgr-item-inner">
 											<div class="portfolio-grid-item">
@@ -293,7 +339,7 @@
 														<div class="pgi-image-inner tt-anim-zoomin">
 															<figure class="pgi-image ttgr-height">
 																<img src="assets/img/project/5.avif"
-																	loading="lazy" alt="JRF Kashmir Academy website by Ayush Jha web developer">
+																	loading="lazy" alt="RevoExp website by Ayush Jha web developer">
 															</figure>
 														</div>
 													</div>
@@ -303,6 +349,7 @@
 										</div>
 									</div>
 									
+									<!-- FIXED: alt was "Mentor Educare Portal website" — did not match internationalhumanrights.in -->
 									<div class="tt-grid-item isotope-item webdev">
 										<div class="ttgr-item-inner">
 											<div class="portfolio-grid-item">
@@ -312,7 +359,7 @@
 														<div class="pgi-image-inner tt-anim-zoomin">
 															<figure class="pgi-image ttgr-height">
 																<img src="assets/img/project/7.avif"
-																	loading="lazy" alt="Mentor Educare Portal website by Ayush Jha">
+																	loading="lazy" alt="Indian Human Rights website by Ayush Jha web developer">
 															</figure>
 														</div>
 													</div>
@@ -322,6 +369,7 @@
 										</div>
 									</div>
 									
+									<!-- FIXED: alt was "Dynamic News Portal website" — did not match mokshmortuary.in -->
 									<div class="tt-grid-item isotope-item webdev">
 										<div class="ttgr-item-inner">
 											<div class="portfolio-grid-item">
@@ -331,7 +379,7 @@
 														<div class="pgi-image-inner tt-anim-zoomin">
 															<figure class="pgi-image ttgr-height">
 																<img src="assets/img/project/8.avif"
-																	loading="lazy" alt="Dynamic News Portal website by Ayush Jha web developer">
+																	loading="lazy" alt="Moksh Mortuary website by Ayush Jha web developer">
 															</figure>
 														</div>
 													</div>
@@ -341,6 +389,7 @@
 										</div>
 									</div>
 									
+									<!-- FIXED: alt was "RS Skin and Hair Clinic website" (duplicate of a different project below) — did not match paisaloo.in -->
 									<div class="tt-grid-item isotope-item webdev">
 										<div class="ttgr-item-inner">
 											<div class="portfolio-grid-item">
@@ -350,7 +399,7 @@
 														<div class="pgi-image-inner tt-anim-zoomin">
 															<figure class="pgi-image ttgr-height">
 																<img src="assets/img/project/9.avif"
-																	loading="lazy" alt="RS Skin and Hair Clinic website by Ayush Jha web developer">
+																	loading="lazy" alt="Paisaloo website by Ayush Jha web developer">
 															</figure>
 														</div>
 													</div>
@@ -542,7 +591,7 @@
 								<ul class="tt-footer-widget-list">
 									<li>
 										<a href="https://maps.google.com/?q=Sarup+Vihar,+Burari,+Delhi" class="tt-link"
-											target="_blank" rel="nofollow noopener">Sarup Vihar, Burari,<br> Delhi,
+											target="_blank" rel="nofollow noopener" itemprop="address">Sarup Vihar, Burari,<br> Delhi,
 											India</a>
 									</li>
 									<li><a href="mailto:ayushcodes30@gmail.com"
@@ -587,7 +636,7 @@
 									</li>
 									<li>
 										<div class="tt-footer-copyright">
-											© <span class="tt-copyright-year"></span> <a href="https://www.ayushcodes.site/"
+											&copy; <span class="tt-copyright-year"></span> <a href="https://www.ayushcodes.site/"
 												class="tt-link" target="_blank" rel="nofollow noopener"> Ayush
 												Jha</a><br>
 											All Rights Reserved
