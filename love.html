@@ -159,6 +159,41 @@ body{
   transform:translateX(3px);
 }
 
+/* Top Gallery Button */
+.top-gallery-btn{
+  position:absolute;
+  top:24px;
+  right:20px;
+  width:40px;
+  height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  color:var(--ink-muted);
+  text-decoration:none;
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  transition:all 0.28s ease;
+  z-index:10;
+}
+.top-gallery-btn svg{
+  width:18px;
+  height:18px;
+  stroke:currentColor;
+  fill:none;
+  stroke-width:1.7;
+}
+.top-gallery-btn:hover{
+  border-color:var(--border-hover);
+  background:var(--bg-card-hover);
+  color:var(--gold-soft);
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(0,0,0,0.3), 0 0 16px rgba(212,164,76,0.08);
+}
+
 /* Footer */
 .foot{
   margin-top:40px;
@@ -176,6 +211,14 @@ body{
 <div class="bg-orb orb-2"></div>
 
 <div class="wrap">
+  <a class="top-gallery-btn" href="love/gallery.html" title="Gallery" aria-label="Gallery">
+    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="4"/>
+      <circle cx="8.5" cy="8.5" r="1.5"/>
+      <polyline points="21 15 16 10 5 21"/>
+    </svg>
+  </a>
+
   <div class="header">
     <span class="header-tag">Personal Archive</span>
     <h1>Ayush <span class="heart">&hearts;</span> Sohani</h1>
@@ -212,21 +255,6 @@ body{
           <span>21 Aug 2026</span>
           <span class="dot">&middot;</span>
           <span>First Meet</span>
-        </div>
-      </div>
-      <div class="item-arrow">
-        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-      </div>
-    </a>
-
-    <a class="item" href="love/gallery.html">
-      <div class="item-num">03</div>
-      <div class="item-body">
-        <div class="item-name">Gallery</div>
-        <div class="item-meta">
-          <span>Always growing</span>
-          <span class="dot">&middot;</span>
-          <span>Photos &amp; Videos</span>
         </div>
       </div>
       <div class="item-arrow">
