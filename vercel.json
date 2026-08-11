@@ -3,7 +3,17 @@
   "trailingSlash": false,
   "redirects": [
     { "source": "/index", "destination": "/", "permanent": true },
-    { "source": "/index.html", "destination": "/", "permanent": true }
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/about-me.html", "destination": "/about-me", "permanent": true },
+    { "source": "/services.html", "destination": "/services", "permanent": true },
+    { "source": "/work.html", "destination": "/work", "permanent": true },
+    { "source": "/contact.html", "destination": "/contact", "permanent": true },
+    { "source": "/faq.html", "destination": "/faq", "permanent": true },
+    { "source": "/web-development.html", "destination": "/web-development", "permanent": true },
+    { "source": "/seo-services.html", "destination": "/seo-services", "permanent": true },
+    { "source": "/graphic-design.html", "destination": "/graphic-design", "permanent": true },
+    { "source": "/video-editing.html", "destination": "/video-editing", "permanent": true },
+    { "source": "/meta-ads.html", "destination": "/meta-ads", "permanent": true }
   ],
   "headers": [
     {

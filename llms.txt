@@ -15,10 +15,13 @@
 
 - [Home](https://www.ayushcodes.site/) — Portfolio homepage with intro, stats, services, and recent work.
 - [About Me](https://www.ayushcodes.site/about-me) — Personal background, skills, tools, working process, and client testimonials.
-- [Services](https://www.ayushcodes.site/services) — Web development, SEO, graphic design, video editing, and Meta Ads services with pricing.
+- [Services](https://www.ayushcodes.site/services) — Overview of Web development, SEO, graphic design, video editing, and Meta Ads services.
+- [Web Development](https://www.ayushcodes.site/web-development.html) — Full Stack web development, MERN Stack, and Next.js services.
+- [SEO Services](https://www.ayushcodes.site/seo-services.html) — Technical SEO, on-page optimization, and local search rankings.
+- [Graphic Design](https://www.ayushcodes.site/graphic-design.html) — Visual branding, social media assets, and AI-assisted graphic design.
+- [Video Editing](https://www.ayushcodes.site/video-editing.html) — DaVinci Resolve video editing, Reels, Shorts, and promo ads.
+- [Meta Ads](https://www.ayushcodes.site/meta-ads.html) — Facebook & Instagram ad campaign management and pixel tracking.
 - [Work](https://www.ayushcodes.site/work) — Portfolio of completed projects.
-- [MERN Stack Course](https://www.ayushcodes.site/mern-stack-course) — MERN Stack course details and enrollment.
-- [Digital Marketing Course](https://www.ayushcodes.site/digital-marketing-course) — Digital marketing course details and enrollment.
 - [Contact](https://www.ayushcodes.site/contact) — Contact form, email, phone, social links, and FAQ.
 - [FAQ](https://www.ayushcodes.site/faq) — Frequently asked questions.
 
