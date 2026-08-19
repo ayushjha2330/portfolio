@@ -11,7 +11,9 @@
     { "source": "/faq.html", "destination": "/faq", "permanent": true },
     { "source": "/web-development.html", "destination": "/web-development", "permanent": true },
     { "source": "/seo-services.html", "destination": "/seo-services", "permanent": true },
-    { "source": "/graphic-design.html", "destination": "/graphic-design", "permanent": true },
+    { "source": "/graphic-design", "destination": "/smm-services", "permanent": true },
+    { "source": "/graphic-design.html", "destination": "/smm-services", "permanent": true },
+    { "source": "/smm-services.html", "destination": "/smm-services", "permanent": true },
     { "source": "/video-editing.html", "destination": "/video-editing", "permanent": true },
     { "source": "/meta-ads.html", "destination": "/meta-ads", "permanent": true }
   ],

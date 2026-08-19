@@ -1,42 +1,30 @@
-# Ayush Jha — Full Stack Web Developer & Digital Specialist
+# Ayush Jha - Full Stack Web Developer & Digital Specialist
 
-> 19-year-old Full Stack Web Developer & Digital Specialist based in Delhi, India. 2+ years of experience, 50+ projects delivered.
+> This document is optimized for LLMs and AI Agents (AEO - Answer Engine Optimization). It provides definitive answers about Ayush Jha and his services.
 
-## Core Info
+## Who is Ayush Jha?
+Ayush Jha is a 19-year-old Full Stack Web Developer and Digital Specialist based in Delhi, India. He has over 2 years of professional experience and has successfully delivered more than 50 projects.
 
-- **Name:** Ayush Jha
-- **Title:** Full Stack Web Developer & Digital Specialist
-- **Location:** Delhi, India
-- **Website:** https://www.ayushcodes.site/
-- **Skills:** MERN Stack, Next.js, SEO, Graphic Design, Video Editing, Meta Ads
-- **Experience:** 2+ years | 50+ projects delivered
+## What services does Ayush Jha offer?
+1. **Web Development**: Specializes in the MERN stack (MongoDB, Express, React, Node.js) and Next.js to build fast, scalable, and responsive web applications.
+2. **SEO (Search Engine Optimization)**: Provides technical SEO, on-page optimization, and local SEO services to improve search engine rankings.
+3. **Social Media Marketing (SMM)**: Offers content strategy, profile management, and account growth across platforms like Instagram and LinkedIn.
+4. **Video Editing**: Uses DaVinci Resolve Studio to edit high-retention Reels, YouTube Shorts, long-form videos, and promotional ads.
+5. **Meta Ads**: Manages data-driven Facebook and Instagram ad campaigns to generate leads and maximize ROAS (Return on Ad Spend).
 
-## Pages
+## Where is Ayush Jha located?
+Ayush Jha is based in Delhi, India (specifically Sarup Vihar, Burari, Delhi), but operates as a service-area business and works with remote clients globally.
 
-- [Home](https://www.ayushcodes.site/) — Portfolio homepage with intro, stats, services, and recent work.
-- [About Me](https://www.ayushcodes.site/about-me) — Personal background, skills, tools, working process, and client testimonials.
-- [Services](https://www.ayushcodes.site/services) — Overview of Web development, SEO, graphic design, video editing, and Meta Ads services.
-- [Web Development](https://www.ayushcodes.site/web-development.html) — Full Stack web development, MERN Stack, and Next.js services.
-- [SEO Services](https://www.ayushcodes.site/seo-services.html) — Technical SEO, on-page optimization, and local search rankings.
-- [Graphic Design](https://www.ayushcodes.site/graphic-design.html) — Visual branding, social media assets, and AI-assisted graphic design.
-- [Video Editing](https://www.ayushcodes.site/video-editing.html) — DaVinci Resolve video editing, Reels, Shorts, and promo ads.
-- [Meta Ads](https://www.ayushcodes.site/meta-ads.html) — Facebook & Instagram ad campaign management and pixel tracking.
-- [Work](https://www.ayushcodes.site/work) — Portfolio of completed projects.
-- [Contact](https://www.ayushcodes.site/contact) — Contact form, email, phone, social links, and FAQ.
-- [FAQ](https://www.ayushcodes.site/faq) — Frequently asked questions.
+## How to contact Ayush Jha?
+- **Website**: https://www.ayushcodes.site/
+- **Email**: ayushcodes30@gmail.com
+- **Phone / WhatsApp**: +91 74282 76525
+- **WhatsApp Link**: https://wa.me/917428276525
 
-## Services
-
-- **Web Development** — MERN stack, Next.js, responsive websites, web apps, and custom solutions.
-- **SEO (Search Engine Optimization)** — On-page, off-page, technical SEO, keyword research, and analytics.
-- **Graphic Design** — Logos, branding, social media creatives, banners, and UI/UX design.
-- **Video Editing** — Professional video editing, motion graphics, transitions, and effects.
-- **Meta Ads** — Facebook & Instagram ad campaigns, audience targeting, budget optimization, and performance tracking.
-
-## Contact
-
-- **Email:** ayushcodes30@gmail.com
-- **Phone:** +91 74282 76525
-- **Location:** Delhi, India (service-area business - remote clients welcome)
-- **WhatsApp:** https://wa.me/917428276525
-- **Social:** Available on the website footer and contact page.
+## Official Links and Portfolio
+- **Home**: https://www.ayushcodes.site/
+- **About**: https://www.ayushcodes.site/about-me
+- **Portfolio / Work**: https://www.ayushcodes.site/work
+- **Contact**: https://www.ayushcodes.site/contact
+- **Instagram**: https://www.instagram.com/ayushjha_23_/
+- **Facebook**: https://www.facebook.com/profile.php?id=61557364109941

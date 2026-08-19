@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /love/
 
 Sitemap: https://www.ayushcodes.site/sitemap.xml
+
