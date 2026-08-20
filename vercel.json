@@ -15,7 +15,8 @@
     { "source": "/graphic-design.html", "destination": "/smm-services", "permanent": true },
     { "source": "/smm-services.html", "destination": "/smm-services", "permanent": true },
     { "source": "/video-editing.html", "destination": "/video-editing", "permanent": true },
-    { "source": "/meta-ads.html", "destination": "/meta-ads", "permanent": true }
+    { "source": "/meta-ads.html", "destination": "/meta-ads", "permanent": true },
+    { "source": "/pricing.html", "destination": "/pricing", "permanent": true }
   ],
   "headers": [
     {
