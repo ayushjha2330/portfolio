@@ -77,13 +77,6 @@
 		   All classes prefixed with "pp-" to avoid collisions
 		   ============================================================ */
 
-		/* ——— Mobile Scroll & Container Fix ——— */
-		#body-inner,
-		#tt-content-wrap,
-		#tt-page-content {
-			overflow: visible !important;
-		}
-
 		/* ——— Service navigation bar ——— */
 		.pp-service-nav {
 			position: sticky;
@@ -97,7 +90,6 @@
 		.pp-service-nav-inner {
 			display: flex;
 			overflow-x: auto;
-			touch-action: pan-x pan-y;
 			scrollbar-width: none;
 			-ms-overflow-style: none;
 			padding: 0 28px;
@@ -516,7 +508,6 @@
 			.pp-three-col-cell.pp-cell-featured + .pp-three-col-cell { border-left: 1px solid var(--tt-border-color); border-top: none; }
 		}
 		@media (max-width: 768px) {
-			.pp-fade { opacity: 1 !important; transform: none !important; }
 			.pp-hero { padding: 100px 0 60px; }
 			.pp-hero-deco { display: none; }
 			.pp-section { padding: 72px 0; }
@@ -537,6 +528,23 @@
 			.pp-price-lg { font-size: clamp(40px, 10vw, 64px); }
 			.pp-cta-btns { flex-direction: column; align-items: flex-start; }
 			.pp-btn { width: 100%; justify-content: center; }
+		}
+
+		/* ===========================================================
+		   MOBILE SCROLL FIX
+		   =========================================================== */
+		@media (max-width: 1024px) {
+			/* Override theme's overflow:hidden on #body-inner for mobile
+			   so native touch scroll works alongside Lenis */
+			html, body {
+				height: auto !important;
+				overflow: auto !important;
+				-webkit-overflow-scrolling: touch !important;
+			}
+			#body-inner {
+				overflow: visible !important;
+				height: auto !important;
+			}
 		}
 	</style>
 
@@ -1164,9 +1172,17 @@
 		function initNavShadow() {
 			var nav = document.getElementById('pp-nav');
 			if (!nav) return;
-			window.addEventListener('scroll', function () {
-				nav.classList.toggle('nav-scrolled', window.scrollY > 60);
-			}, { passive: true });
+			function checkScroll() {
+				var y = window.scrollY || document.documentElement.scrollTop;
+				nav.classList.toggle('nav-scrolled', y > 60);
+			}
+			window.addEventListener('scroll', checkScroll, { passive: true });
+			// also hook into Lenis if present
+			if (window.lenis) {
+				window.lenis.on('scroll', function(e) {
+					nav.classList.toggle('nav-scrolled', e.scroll > 60);
+				});
+			}
 		}
 
 		/* ——— Active service nav based on scroll ——— */
@@ -1208,14 +1224,22 @@
 
 		/* ——— Smooth scroll for nav links ——— */
 		function initSmoothScroll() {
-			var links = document.querySelectorAll('.pp-service-nav-inner a[href^="#"]');
-			links.forEach(function (link) {
+			var navLinks = document.querySelectorAll('.pp-service-nav-inner a[href^="#"]');
+			navLinks.forEach(function (link) {
 				link.addEventListener('click', function (e) {
 					e.preventDefault();
-					var target = document.querySelector(this.getAttribute('href'));
+					var targetId = this.getAttribute('href');
+					var target = document.querySelector(targetId);
 					if (!target) return;
-					var top = target.getBoundingClientRect().top + window.pageYOffset - 110;
-					window.scrollTo({ top: top, behavior: 'smooth' });
+
+					// If Lenis is available (desktop smooth scroll), use it
+					if (window.lenis) {
+						window.lenis.scrollTo(target, { offset: -110, duration: 1.2 });
+					} else {
+						// Native scroll for mobile
+						var top = target.getBoundingClientRect().top + window.pageYOffset - 110;
+						window.scrollTo({ top: top, behavior: 'smooth' });
+					}
 				});
 			});
 		}
