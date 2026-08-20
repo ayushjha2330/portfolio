@@ -77,6 +77,13 @@
 		   All classes prefixed with "pp-" to avoid collisions
 		   ============================================================ */
 
+		/* ——— Mobile Scroll & Container Fix ——— */
+		#body-inner,
+		#tt-content-wrap,
+		#tt-page-content {
+			overflow: visible !important;
+		}
+
 		/* ——— Service navigation bar ——— */
 		.pp-service-nav {
 			position: sticky;
@@ -90,6 +97,7 @@
 		.pp-service-nav-inner {
 			display: flex;
 			overflow-x: auto;
+			touch-action: pan-x pan-y;
 			scrollbar-width: none;
 			-ms-overflow-style: none;
 			padding: 0 28px;
@@ -508,6 +516,7 @@
 			.pp-three-col-cell.pp-cell-featured + .pp-three-col-cell { border-left: 1px solid var(--tt-border-color); border-top: none; }
 		}
 		@media (max-width: 768px) {
+			.pp-fade { opacity: 1 !important; transform: none !important; }
 			.pp-hero { padding: 100px 0 60px; }
 			.pp-hero-deco { display: none; }
 			.pp-section { padding: 72px 0; }
