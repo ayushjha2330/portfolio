@@ -416,23 +416,17 @@
 			overflow: hidden;
 		}
 		.pp-hero-eyebrow {
-			font-size: 10px;
+			font-size: 10.5px;
 			font-weight: 700;
-			letter-spacing: 0.2em;
+			letter-spacing: 0.15em;
 			text-transform: uppercase;
 			color: var(--tt-main-color);
-			margin-bottom: 20px;
-			display: flex;
-			align-items: center;
-			gap: 12px;
-		}
-		.pp-hero-eyebrow::before {
-			content: '';
+			background: rgba(216, 92, 39, 0.1);
+			padding: 6px 16px;
+			border-radius: 100px;
+			border: 1px solid rgba(216, 92, 39, 0.2);
 			display: inline-block;
-			width: 24px;
-			height: 2px;
-			background: var(--tt-main-color);
-			border-radius: 2px;
+			margin-bottom: 28px;
 		}
 		.pp-hero-title {
 			font-family: var(--tt-alter-font);
@@ -513,8 +507,8 @@
 		   RESPONSIVE BREAKPOINTS
 		   =========================================================== */
 		@media (max-width: 1080px) {
-			.pp-numlist { grid-template-columns: 1fr; gap: 48px; }
-			.pp-numlist-cell + .pp-numlist-cell { border-left: none; padding-left: 0; border-top: 1px solid var(--tt-border-color); padding-top: 48px; }
+			.pp-numlist { grid-template-columns: 1fr; }
+			.pp-numlist-cell + .pp-numlist-cell { border-left: none; border-top: 1px solid var(--tt-border-color); }
 		}
 		@media (max-width: 960px) {
 			.pp-three-col { grid-template-columns: 1fr; }
