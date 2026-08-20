@@ -581,6 +581,32 @@
 		}
 	</style>
 
+	<!-- Disable Lenis smooth scroll on touch/mobile devices -->
+	<script>
+		(function() {
+			var isMobile = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (window.innerWidth <= 1024);
+			if (isMobile) {
+				document.documentElement.classList.remove('tt-smooth-scroll');
+				// Will also strip from body after DOM ready
+				document.addEventListener('DOMContentLoaded', function() {
+					var body = document.getElementById('body');
+					if (body) body.classList.remove('tt-smooth-scroll');
+					// Kill Lenis if it already initialized
+					if (window.lenis) { window.lenis.destroy(); window.lenis = null; }
+					// Also kill it after scripts load
+					window.addEventListener('load', function() {
+						if (window.lenis) { window.lenis.destroy(); window.lenis = null; }
+						// Restore native scroll
+						document.documentElement.style.overflow = 'auto';
+						document.body.style.overflow = 'auto';
+						var inner = document.getElementById('body-inner');
+						if (inner) { inner.style.overflow = 'visible'; inner.style.height = 'auto'; }
+					});
+				});
+			}
+		})();
+	</script>
+
 </head>
 
 <body id="body" class="tt-transition tt-noise tt-magic-cursor tt-smooth-scroll">
