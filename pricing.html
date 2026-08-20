@@ -321,51 +321,73 @@
 		.pp-two-col {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
-			gap: 1px;
-			background: var(--tt-border-color);
+			gap: 0;
+			border: 1px solid var(--tt-border-color);
 		}
 		.pp-two-col-cell {
 			background: var(--tt-bg-color);
 			padding: 56px 52px;
+			position: relative;
+		}
+		.pp-two-col-cell + .pp-two-col-cell {
+			border-left: 1px solid var(--tt-border-color);
 		}
 		.pp-two-col-cell.pp-cell-accent {
 			background: var(--tt-bg-color);
+			border-left-color: var(--tt-main-color) !important;
 		}
 		.pp-two-col-cell.pp-cell-accent::before {
-			content: ''; position: absolute; inset: 0; background: var(--tt-main-color); opacity: 0.05; pointer-events: none;
+			content: ''; position: absolute; inset: 0; background: var(--tt-main-color); opacity: 0.04; pointer-events: none; z-index: 0;
 		}
+		.pp-two-col-cell.pp-cell-accent > * { position: relative; z-index: 1; }
 
 		/* — Three-tier horizontal (Website Dev) — */
 		.pp-three-col {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			gap: 0;
+			border: 1px solid var(--tt-border-color);
 		}
 		.pp-three-col-cell {
 			padding: 52px 40px;
-			border: 1px solid var(--tt-border-color);
-			border-right: none;
+			border-right: 1px solid var(--tt-border-color);
 			display: flex;
 			flex-direction: column;
+			position: relative;
 		}
-		.pp-three-col-cell:last-child { border-right: 1px solid var(--tt-border-color); }
+		.pp-three-col-cell:last-child { border-right: none; }
 		.pp-three-col-cell.pp-cell-featured {
-			border-color: var(--tt-main-color);
-			border-right: 1px solid var(--tt-main-color);
+			border-right-color: var(--tt-main-color);
 			background: var(--tt-bg-color);
 		}
 		.pp-three-col-cell.pp-cell-featured::before {
-			content: ''; position: absolute; inset: 0; background: var(--tt-main-color); opacity: 0.03; pointer-events: none;
+			content: ''; position: absolute; inset: 0; background: var(--tt-main-color); opacity: 0.04; pointer-events: none;
 		}
-		.pp-three-col-cell.pp-cell-featured + .pp-three-col-cell { border-left: none; }
+		.pp-three-col-cell.pp-cell-featured > * { position: relative; z-index: 1; }
+		.pp-three-col-cell.pp-cell-featured + .pp-three-col-cell { border-left-color: var(--tt-main-color); }
 
 		/* — Editorial split (Meta Ads) — */
 		.pp-split {
 			display: flex;
 			gap: 72px;
 			padding: 56px 0;
+			border: 1px solid var(--tt-border-color);
+			border-bottom: none;
+			padding: 56px 48px;
 		}
-		.pp-split + .pp-split { border-top: 1px solid var(--tt-border-color); }
+		.pp-split + .pp-split {
+			border-top: 1px solid var(--tt-border-color);
+		}
+		.pp-splits-wrap {
+			border: 1px solid var(--tt-border-color);
+		}
+		.pp-splits-wrap .pp-split {
+			border: none;
+			border-bottom: 1px solid var(--tt-border-color);
+		}
+		.pp-splits-wrap .pp-split:last-child {
+			border-bottom: none;
+		}
 		.pp-split-left { flex: 0 0 300px; }
 		.pp-split-right { flex: 1; }
 
@@ -374,13 +396,13 @@
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			gap: 0;
+			border: 1px solid var(--tt-border-color);
 		}
 		.pp-numlist-cell {
-			padding: 0;
+			padding: 52px 48px;
 		}
 		.pp-numlist-cell + .pp-numlist-cell {
 			border-left: 1px solid var(--tt-border-color);
-			padding-left: 68px;
 		}
 
 		/* ===========================================================
@@ -524,10 +546,19 @@
 			.pp-service-nav-inner a { padding: 14px 12px; font-size: 10.5px; }
 			.pp-two-col-cell { padding: 32px 20px; }
 			.pp-three-col-cell { padding: 32px 20px; }
+			.pp-numlist-cell { padding: 32px 20px; }
 			.pp-price-xl { font-size: clamp(50px, 14vw, 80px); }
 			.pp-price-lg { font-size: clamp(40px, 10vw, 64px); }
 			.pp-cta-btns { flex-direction: column; align-items: flex-start; }
 			.pp-btn { width: 100%; justify-content: center; }
+		}
+		@media (max-width: 768px) {
+			.pp-two-col { grid-template-columns: 1fr; }
+			.pp-two-col-cell + .pp-two-col-cell { border-left: none; border-top: 1px solid var(--tt-border-color); }
+			.pp-numlist { grid-template-columns: 1fr; }
+			.pp-numlist-cell + .pp-numlist-cell { border-left: none; border-top: 1px solid var(--tt-border-color); }
+			.pp-split { flex-direction: column; gap: 28px; padding: 36px 24px; }
+			.pp-split-left { flex: none; }
 		}
 
 		/* ===========================================================
@@ -813,46 +844,50 @@
 						<div class="pp-count pp-fade">03 / 06</div>
 						<div class="pp-section-label pp-fade" id="heading-meta">Meta Ads Setup</div><h2 class="pp-section-heading pp-fade">Targeted Ad Campaigns</h2>
 
-						<!-- Starter -->
-						<div class="pp-split pp-fade">
-							<div class="pp-split-left">
-								<div class="pp-plan-label">Starter Setup</div>
-								<div class="pp-price pp-price-xl">&#8377;2,000</div>
-								<span class="pp-price-unit">One-Time</span>
-								<a href="/contact" class="tt-btn tt-btn-outline tt-magnetic-item margin-top-20" aria-label="Get started with Starter Meta Ads setup"><span data-hover="Get Started">Get Started</span></a>
-							</div>
-							<div class="pp-split-right">
-								<ul class="pp-features" aria-label="Starter Meta Ads features">
-									<li>1 Ad Campaign</li>
-									<li>2 Ad Creatives</li>
-									<li>Audience Targeting</li>
-									<li>Ad Copy</li>
-									<li>Campaign Setup</li>
-								</ul>
-							</div>
-						</div>
+						<div class="pp-splits-wrap pp-fade">
 
-						<!-- Growth — Recommended -->
-						<div class="pp-split pp-fade pp-delay-1">
-							<div class="pp-split-left">
-								<div class="pp-badge" style="margin-bottom:10px;">Recommended</div>
-								<div class="pp-plan-label">Growth Setup</div>
-								<div class="pp-price pp-price-xl pp-price-accent">&#8377;4,000</div>
-								<span class="pp-price-unit">One-Time</span>
-								<a href="/contact" class="tt-btn tt-btn-secondary tt-magnetic-item margin-top-20" aria-label="Get started with Growth Meta Ads setup"><span data-hover="Get Started">Get Started</span></a>
+							<!-- Starter -->
+							<div class="pp-split">
+								<div class="pp-split-left">
+									<div class="pp-plan-label">Starter Setup</div>
+									<div class="pp-price pp-price-xl">&#8377;2,000</div>
+									<span class="pp-price-unit">One-Time</span>
+									<a href="/contact" class="tt-btn tt-btn-outline tt-magnetic-item margin-top-20" aria-label="Get started with Starter Meta Ads setup"><span data-hover="Get Started">Get Started</span></a>
+								</div>
+								<div class="pp-split-right">
+									<ul class="pp-features" aria-label="Starter Meta Ads features">
+										<li>1 Ad Campaign</li>
+										<li>2 Ad Creatives</li>
+										<li>Audience Targeting</li>
+										<li>Ad Copy</li>
+										<li>Campaign Setup</li>
+									</ul>
+								</div>
 							</div>
-							<div class="pp-split-right">
-								<ul class="pp-features" aria-label="Growth Meta Ads features">
-									<li>2 Ad Campaigns</li>
-									<li>4 Ad Creatives</li>
-									<li>Audience Targeting</li>
-									<li>Ad Copy</li>
-									<li>Campaign Setup</li>
-									<li>Basic A/B Testing</li>
-								</ul>
-								<p class="pp-note">Ad Spend is Separate &nbsp;&middot;&nbsp; Monthly Ad Management is Separate</p>
+
+							<!-- Growth — Recommended -->
+							<div class="pp-split pp-fade pp-delay-1">
+								<div class="pp-split-left">
+									<div class="pp-badge" style="margin-bottom:10px;">Recommended</div>
+									<div class="pp-plan-label">Growth Setup</div>
+									<div class="pp-price pp-price-xl pp-price-accent">&#8377;4,000</div>
+									<span class="pp-price-unit">One-Time</span>
+									<a href="/contact" class="tt-btn tt-btn-secondary tt-magnetic-item margin-top-20" aria-label="Get started with Growth Meta Ads setup"><span data-hover="Get Started">Get Started</span></a>
+								</div>
+								<div class="pp-split-right">
+									<ul class="pp-features" aria-label="Growth Meta Ads features">
+										<li>2 Ad Campaigns</li>
+										<li>4 Ad Creatives</li>
+										<li>Audience Targeting</li>
+										<li>Ad Copy</li>
+										<li>Campaign Setup</li>
+										<li>Basic A/B Testing</li>
+									</ul>
+									<p class="pp-note">Ad Spend is Separate &nbsp;&middot;&nbsp; Monthly Ad Management is Separate</p>
+								</div>
 							</div>
-						</div>
+
+						</div><!-- /.pp-splits-wrap -->
 
 					</div>
 
