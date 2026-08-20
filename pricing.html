@@ -517,17 +517,19 @@
 		}
 		@media (max-width: 960px) {
 			.pp-three-col { grid-template-columns: 1fr; }
-			.pp-three-col-cell { border-right: 1px solid var(--tt-border-color); border-bottom: none; }
-			.pp-three-col-cell:last-child { border-bottom: 1px solid var(--tt-border-color); }
+			/* When stacked, remove side borders and use bottom border as divider */
+			.pp-three-col-cell {
+				border-right: none;
+				border-bottom: 1px solid var(--tt-border-color);
+			}
+			.pp-three-col-cell:last-child { border-bottom: none; }
 			.pp-three-col-cell.pp-cell-featured {
-			border-color: var(--tt-main-color);
-			border-right: 1px solid var(--tt-main-color);
-			background: var(--tt-bg-color);
-		}
-		.pp-three-col-cell.pp-cell-featured::before {
-			content: ''; position: absolute; inset: 0; background: var(--tt-main-color); opacity: 0.03; pointer-events: none;
-		}
-			.pp-three-col-cell.pp-cell-featured + .pp-three-col-cell { border-left: 1px solid var(--tt-border-color); border-top: none; }
+				border-right: none;
+				border-bottom: 1px solid var(--tt-main-color);
+			}
+			.pp-three-col-cell.pp-cell-featured + .pp-three-col-cell {
+				border-top: none;
+			}
 		}
 		@media (max-width: 768px) {
 			.pp-hero { padding: 100px 0 60px; }
