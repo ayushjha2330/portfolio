@@ -88,7 +88,10 @@
 		}
 		.pp-service-nav.nav-scrolled { box-shadow: 0 6px 40px rgba(0,0,0,0.4); }
 		@media (max-width: 1024px) {
-			.pp-service-nav { display: none; }
+			.pp-service-nav {
+				position: relative; /* Scrolls naturally on mobile instead of sticking */
+				pointer-events: none; /* Disabled interaction as requested */
+			}
 		}
 		.pp-service-nav-inner {
 			display: flex;
@@ -811,6 +814,7 @@
 								<div class="pp-plan-label">Starter Website</div>
 								<div class="pp-price pp-price-lg" style="margin-top:16px;">&#8377;8,000</div>
 								<span class="pp-price-unit">/ Project</span>
+								<div class="pp-rule"></div>
 								<ul class="pp-features" aria-label="Starter Website features">
 									<li>Up to 5 Pages</li>
 									<li>Responsive Design</li>
@@ -828,6 +832,7 @@
 								<div class="pp-plan-label">Business Website</div>
 								<div class="pp-price pp-price-lg pp-price-accent" style="margin-top:16px;">&#8377;12,000</div>
 								<span class="pp-price-unit">/ Project</span>
+								<div class="pp-rule"></div>
 								<ul class="pp-features" aria-label="Business Website features">
 									<li>Up to 7 Pages</li>
 									<li>Responsive Design</li>
@@ -845,6 +850,7 @@
 								<div class="pp-plan-label">E-Commerce Website</div>
 								<div class="pp-price pp-price-lg" style="margin-top:16px;">&#8377;18,000</div>
 								<span class="pp-price-unit">/ Project</span>
+								<div class="pp-rule"></div>
 								<ul class="pp-features" aria-label="E-Commerce Website features">
 									<li>Up to 10 Pages</li>
 									<li>Responsive Design</li>
@@ -883,6 +889,7 @@
 									<div class="pp-plan-label">Starter Setup</div>
 									<div class="pp-price pp-price-xl">&#8377;2,000</div>
 									<span class="pp-price-unit">One-Time</span>
+									<div class="pp-rule"></div>
 									<a href="/contact" class="tt-btn tt-btn-outline tt-magnetic-item margin-top-20" aria-label="Get started with Starter Meta Ads setup"><span data-hover="Get Started">Get Started</span></a>
 								</div>
 								<div class="pp-split-right">
@@ -903,6 +910,7 @@
 									<div class="pp-plan-label">Growth Setup</div>
 									<div class="pp-price pp-price-xl pp-price-accent">&#8377;4,000</div>
 									<span class="pp-price-unit">One-Time</span>
+									<div class="pp-rule"></div>
 									<a href="/contact" class="tt-btn tt-btn-secondary tt-magnetic-item margin-top-20" aria-label="Get started with Growth Meta Ads setup"><span data-hover="Get Started">Get Started</span></a>
 								</div>
 								<div class="pp-split-right">
@@ -942,6 +950,7 @@
 								<div class="pp-plan-label">Starter SEO</div>
 								<div class="pp-price pp-price-xl" style="margin-top:16px;">&#8377;3,000</div>
 								<span class="pp-price-unit">/ Month</span>
+								<div class="pp-rule"></div>
 								<ul class="pp-features" aria-label="Starter SEO features">
 									<li>Up to 5 Target Keywords</li>
 									<li>On-Page SEO</li>
@@ -959,6 +968,7 @@
 								<div class="pp-plan-label">Growth SEO</div>
 								<div class="pp-price pp-price-xl pp-price-accent" style="margin-top:16px;">&#8377;5,000</div>
 								<span class="pp-price-unit">/ Month</span>
+								<div class="pp-rule"></div>
 								<ul class="pp-features" aria-label="Growth SEO features">
 									<li>Up to 10 Target Keywords</li>
 									<li>On-Page SEO</li>
@@ -1046,40 +1056,39 @@
 
 						<div class="pp-numlist pp-fade">
 
-							<!-- Starter SMM -->
+							<!-- Basic SMM -->
 							<div class="pp-numlist-cell">
-								<div class="pp-plan-label">Starter SMM</div>
-								<div class="pp-price pp-price-xl" style="margin-top:16px;">&#8377;3,000</div>
+								<div class="pp-plan-label">Basic SMM</div>
+								<div class="pp-price pp-price-xl" style="margin-top:16px;">&#8377;4,000</div>
 								<span class="pp-price-unit">/ Month</span>
-								<ul class="pp-features" aria-label="Starter Social Media Management features">
-									<li>12 Social Media Posts</li>
-									<li>Content Planning</li>
-									<li>Caption Writing</li>
-									<li>Hashtag Research</li>
-									<li>Post Scheduling</li>
-									<li>Instagram &amp; Facebook Management</li>
+								<div class="pp-rule"></div>
+								<ul class="pp-features" aria-label="Basic SMM features">
+									<li>8 High-Quality Posts / Month</li>
+									<li>Content Creation &amp; Design</li>
+									<li>Caption Writing &amp; Hashtags</li>
+									<li>Page Optimization</li>
 									<li>Monthly Performance Report</li>
 								</ul>
-								<a href="/contact" class="tt-btn tt-btn-outline tt-magnetic-item margin-top-20" aria-label="Get started with Starter SMM plan"><span data-hover="Get Started">Get Started</span></a>
+								<a href="/contact" class="tt-btn tt-btn-outline tt-magnetic-item margin-top-20" aria-label="Get started with Basic SMM plan"><span data-hover="Get Started">Get Started</span></a>
 							</div>
 
-							<!-- Growth SMM — Recommended -->
+							<!-- Advanced SMM — Recommended -->
 							<div class="pp-numlist-cell">
 								<div class="pp-badge" style="margin-bottom:6px;">Recommended</div>
-								<div class="pp-plan-label">Growth SMM</div>
-								<div class="pp-price pp-price-xl pp-price-accent" style="margin-top:16px;">&#8377;5,000</div>
+								<div class="pp-plan-label">Advanced SMM</div>
+								<div class="pp-price pp-price-xl pp-price-accent" style="margin-top:16px;">&#8377;7,000</div>
 								<span class="pp-price-unit">/ Month</span>
-								<ul class="pp-features" aria-label="Growth Social Media Management features">
-									<li>20 Social Media Posts</li>
-									<li>Content Planning</li>
-									<li>Caption Writing</li>
-									<li>Hashtag Research</li>
-									<li>Post Scheduling</li>
-									<li>Instagram &amp; Facebook Management</li>
-									<li>Up to 4 Reels / Month</li>
+								<div class="pp-rule"></div>
+								<ul class="pp-features" aria-label="Advanced SMM features">
+									<li>15 High-Quality Posts / Month</li>
+									<li>Includes 2 Reels/Shorts Editing</li>
+									<li>Content Strategy &amp; Calendar</li>
+									<li>Caption Writing &amp; Hashtags</li>
+									<li>Competitor Analysis</li>
+									<li>Community Engagement (Replies)</li>
 									<li>Monthly Performance Report</li>
 								</ul>
-								<a href="/contact" class="tt-btn tt-btn-secondary tt-magnetic-item margin-top-20" aria-label="Get started with Growth SMM plan"><span data-hover="Get Started">Get Started</span></a>
+								<a href="/contact" class="tt-btn tt-btn-secondary tt-magnetic-item margin-top-20" aria-label="Get started with Advanced SMM plan"><span data-hover="Get Started">Get Started</span></a>
 							</div>
 
 						</div>
