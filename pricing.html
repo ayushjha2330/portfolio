@@ -161,25 +161,32 @@
 		.pp-badge {
 			display: inline-flex;
 			align-items: center;
-			gap: 5px;
-			font-size: 9px;
-			font-weight: 700;
+			gap: 6px;
+			font-size: 9.5px;
+			font-weight: 800;
 			letter-spacing: 0.14em;
 			text-transform: uppercase;
-			color: var(--tt-main-color);
-			border: 1px solid rgba(191,74,26,0.5);
-			background: rgba(191,74,26,0.08);
-			padding: 4px 10px;
-			border-radius: 20px;
-			margin-bottom: 14px;
+			color: #ffffff;
+			background: var(--tt-main-color);
+			padding: 5px 14px 4px;
+			border-radius: 100px;
+			margin-bottom: 16px;
+			box-shadow: 0 4px 14px rgba(191,74,26,0.38);
+			position: relative;
 		}
 		.pp-badge::before {
 			content: '';
 			display: inline-block;
-			width: 5px;
-			height: 5px;
+			width: 6px;
+			height: 6px;
 			border-radius: 50%;
-			background: var(--tt-main-color);
+			background: #ffffff;
+			box-shadow: 0 0 6px rgba(255,255,255,0.8);
+			animation: pp-badge-pulse 1.8s infinite ease-in-out;
+		}
+		@keyframes pp-badge-pulse {
+			0%, 100% { transform: scale(0.85); opacity: 0.75; }
+			50% { transform: scale(1.3); opacity: 1; }
 		}
 
 		/* ——— Plan label ——— */
