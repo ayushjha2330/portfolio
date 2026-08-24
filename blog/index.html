@@ -60,6 +60,173 @@
 	<link rel="dns-prefetch" href="https://fonts.gstatic.com">
 	<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 	<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+	<style>
+		/* ---- Playbook Index: text-only blog list ---- */
+		.playbook-index {
+			--pbi-accent: #e3a73b;
+			--pbi-border: var(--tt-border-color, rgba(133, 133, 133, .22));
+			--pbi-muted: var(--tt-text-muted-color, #888);
+			display: flex;
+			flex-direction: column;
+		}
+
+		.playbook-item {
+			position: relative;
+			display: grid;
+			grid-template-columns: 84px 1fr 40px;
+			align-items: center;
+			gap: 28px;
+			padding: 38px 10px 38px 18px;
+			text-decoration: none;
+			color: inherit;
+			border-top: 1px solid var(--pbi-border);
+			overflow: hidden;
+			transition: padding-left .5s cubic-bezier(.16, 1, .3, 1);
+		}
+
+		.playbook-index a.playbook-item:last-child {
+			border-bottom: 1px solid var(--pbi-border);
+		}
+
+		.playbook-item::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			width: 3px;
+			background: var(--pbi-accent);
+			transform: scaleY(0);
+			transform-origin: bottom;
+			transition: transform .55s cubic-bezier(.16, 1, .3, 1);
+		}
+
+		.playbook-item:hover {
+			padding-left: 32px;
+		}
+
+		.playbook-item:hover::before {
+			transform: scaleY(1);
+			transform-origin: top;
+		}
+
+		.pbi-index-wrap {
+			display: flex;
+			flex-direction: column;
+			line-height: 1;
+		}
+
+		.pbi-index-label {
+			font-family: 'Inter', sans-serif;
+			font-size: 10px;
+			font-weight: 600;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			color: var(--pbi-muted);
+			margin-bottom: 8px;
+		}
+
+		.pbi-index-num {
+			font-family: 'Big Shoulders Display', sans-serif;
+			font-weight: 800;
+			font-style: italic;
+			font-size: 38px;
+			color: var(--pbi-muted);
+			transition: color .4s ease;
+		}
+
+		.playbook-item:hover .pbi-index-num {
+			color: var(--pbi-accent);
+		}
+
+		.pbi-content {
+			min-width: 0;
+		}
+
+		.pbi-tag {
+			display: inline-block;
+			font-family: 'Inter', sans-serif;
+			font-size: 11px;
+			font-weight: 600;
+			letter-spacing: 1.2px;
+			text-transform: uppercase;
+			padding: 5px 13px;
+			border: 1px solid var(--pbi-muted);
+			border-radius: 100px;
+			color: var(--pbi-muted);
+			margin-bottom: 16px;
+			transition: all .4s ease;
+		}
+
+		.playbook-item:hover .pbi-tag {
+			background: var(--pbi-accent);
+			border-color: var(--pbi-accent);
+			color: #0e0e0e;
+		}
+
+		.pbi-title {
+			font-family: 'Big Shoulders Display', sans-serif;
+			font-weight: 700;
+			font-size: clamp(22px, 2.6vw, 34px);
+			line-height: 1.15;
+			letter-spacing: .2px;
+			margin: 0;
+			transition: transform .5s cubic-bezier(.16, 1, .3, 1);
+		}
+
+		.playbook-item:hover .pbi-title {
+			transform: translateX(8px);
+		}
+
+		.pbi-arrow {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			font-size: 20px;
+			color: var(--pbi-accent);
+			opacity: 0;
+			transform: translateX(-14px);
+			transition: all .45s cubic-bezier(.16, 1, .3, 1);
+		}
+
+		.playbook-item:hover .pbi-arrow {
+			opacity: 1;
+			transform: translateX(0);
+		}
+
+		@media (max-width: 767px) {
+			.playbook-item {
+				grid-template-columns: 52px 1fr;
+				gap: 16px;
+				padding: 28px 6px;
+			}
+
+			.pbi-index-num {
+				font-size: 26px;
+			}
+
+			.pbi-index-label {
+				display: none;
+			}
+
+			.pbi-arrow {
+				display: none;
+			}
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+
+			.playbook-item,
+			.playbook-item::before,
+			.pbi-index-num,
+			.pbi-tag,
+			.pbi-title,
+			.pbi-arrow {
+				transition: none !important;
+			}
+		}
+	</style>
 </head>
 
 <body id="body" class="tt-transition tt-noise tt-magic-cursor tt-smooth-scroll">
@@ -192,232 +359,131 @@
 			</div>
 
 			<div id="tt-page-content">
-				<!-- Blog Posts List -->
+				<!-- Blog Posts List (text-only) -->
 				<div class="tt-section">
 					<div class="tt-section-inner max-width-2200">
-						<div class="tt-portfolio-compact-list pcl-caption-hover pcl-image-hover">
-							<div class="pcli-inner">
-								<!-- Post 1 -->
-								<a href="/blog/website-cost-delhi-2026" class="pcli-item tt-anim-fadeinup" data-cursor="Read<br>Post">
-									<div class="pcli-item-inner">
-										<div class="pcli-col pcli-col-image">
-											<div class="pcli-image">
-												<img src="../assets/img/project/web_development_og.jpg" loading="lazy" alt="Delhi website cost guide 2026">
-											</div>
-										</div>
-										<div class="pcli-col pcli-col-count">
-											<div class="pcli-count">01</div>
-										</div>
-										<div class="pcli-col pcli-col-caption">
-											<div class="pcli-caption">
-												<h2 class="pcli-title">How Much Does a Website Cost in Delhi? 2026 Pricing Guide</h2>
-												<div class="pcli-categories">
-													<div class="pcli-category">Web Development &amp; Pricing</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</a>
+						<div class="playbook-index">
 
-								<!-- Post 2 -->
-								<a href="/blog/mern-stack-vs-wordpress" class="pcli-item tt-anim-fadeinup" data-cursor="Read<br>Post">
-									<div class="pcli-item-inner">
-										<div class="pcli-col pcli-col-image">
-											<div class="pcli-image">
-												<img src="../assets/img/project/web_development_og.jpg" loading="lazy" alt="MERN vs WordPress for small business">
-											</div>
-										</div>
-										<div class="pcli-col pcli-col-count">
-											<div class="pcli-count">02</div>
-										</div>
-										<div class="pcli-col pcli-col-caption">
-											<div class="pcli-caption">
-												<h2 class="pcli-title">MERN Stack vs WordPress: Which Is Right for Your Small Business?</h2>
-												<div class="pcli-categories">
-													<div class="pcli-category">Web Development &amp; Tech Stack</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</a>
+							<a href="/blog/website-cost-delhi-2026" class="playbook-item tt-anim-fadeinup">
+								<div class="pbi-index-wrap">
+									<span class="pbi-index-label">Play</span>
+									<span class="pbi-index-num">01</span>
+								</div>
+								<div class="pbi-content">
+									<span class="pbi-tag">Web Development &amp; Pricing</span>
+									<h2 class="pbi-title">How Much Does a Website Cost in Delhi? 2026 Pricing Guide</h2>
+								</div>
+								<span class="pbi-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+							</a>
 
-								<!-- Post 3 -->
-								<a href="/blog/rank-google-maps-delhi" class="pcli-item tt-anim-fadeinup" data-cursor="Read<br>Post">
-									<div class="pcli-item-inner">
-										<div class="pcli-col pcli-col-image">
-											<div class="pcli-image">
-												<img src="../assets/img/project/seo_services_og.jpg" loading="lazy" alt="Rank google business profile delhi maps">
-											</div>
-										</div>
-										<div class="pcli-col pcli-col-count">
-											<div class="pcli-count">03</div>
-										</div>
-										<div class="pcli-col pcli-col-caption">
-											<div class="pcli-caption">
-												<h2 class="pcli-title">How to Rank #1 on Google Maps for Local Businesses in Delhi</h2>
-												<div class="pcli-categories">
-													<div class="pcli-category">Local SEO &amp; GMB</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</a>
+							<a href="/blog/mern-stack-vs-wordpress" class="playbook-item tt-anim-fadeinup">
+								<div class="pbi-index-wrap">
+									<span class="pbi-index-label">Play</span>
+									<span class="pbi-index-num">02</span>
+								</div>
+								<div class="pbi-content">
+									<span class="pbi-tag">Web Development &amp; Tech Stack</span>
+									<h2 class="pbi-title">MERN Stack vs WordPress: Which Is Right for Your Small Business?</h2>
+								</div>
+								<span class="pbi-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+							</a>
 
-								<!-- Post 4 -->
-								<a href="/blog/freelancer-vs-agency-delhi" class="pcli-item tt-anim-fadeinup" data-cursor="Read<br>Post">
-									<div class="pcli-item-inner">
-										<div class="pcli-col pcli-col-image">
-											<div class="pcli-image">
-												<img src="../assets/img/project/web_development_og.jpg" loading="lazy" alt="Freelancer vs agency for website Delhi budget">
-											</div>
-										</div>
-										<div class="pcli-col pcli-col-count">
-											<div class="pcli-count">04</div>
-										</div>
-										<div class="pcli-col pcli-col-caption">
-											<div class="pcli-caption">
-												<h2 class="pcli-title">Freelancer vs Agency: What's Actually Right for Your Website Budget?</h2>
-												<div class="pcli-categories">
-													<div class="pcli-category">Budgeting &amp; Freelancing</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</a>
+							<a href="/blog/rank-google-maps-delhi" class="playbook-item tt-anim-fadeinup">
+								<div class="pbi-index-wrap">
+									<span class="pbi-index-label">Play</span>
+									<span class="pbi-index-num">03</span>
+								</div>
+								<div class="pbi-content">
+									<span class="pbi-tag">Local SEO &amp; GMB</span>
+									<h2 class="pbi-title">How to Rank #1 on Google Maps for Local Businesses in Delhi</h2>
+								</div>
+								<span class="pbi-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+							</a>
 
-								<!-- Post 5 -->
-								<a href="/blog/meta-ads-clinics-delhi" class="pcli-item tt-anim-fadeinup" data-cursor="Read<br>Post">
-									<div class="pcli-item-inner">
-										<div class="pcli-col pcli-col-image">
-											<div class="pcli-image">
-												<img src="../assets/img/project/meta_ads_og.jpg" loading="lazy" alt="Meta ads for local clinics Delhi">
-											</div>
-										</div>
-										<div class="pcli-col pcli-col-count">
-											<div class="pcli-count">05</div>
-										</div>
-										<div class="pcli-col pcli-col-caption">
-											<div class="pcli-caption">
-												<h2 class="pcli-title">How Meta Ads Work for Clinics and Coaching Institutes in Delhi</h2>
-												<div class="pcli-categories">
-													<div class="pcli-category">Meta Ads &amp; Paid Lead Generation</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</a>
+							<a href="/blog/freelancer-vs-agency-delhi" class="playbook-item tt-anim-fadeinup">
+								<div class="pbi-index-wrap">
+									<span class="pbi-index-label">Play</span>
+									<span class="pbi-index-num">04</span>
+								</div>
+								<div class="pbi-content">
+									<span class="pbi-tag">Budgeting &amp; Freelancing</span>
+									<h2 class="pbi-title">Freelancer vs Agency: What's Actually Right for Your Website Budget?</h2>
+								</div>
+								<span class="pbi-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+							</a>
 
-								<!-- Post 6 -->
-								<a href="/blog/seo-coaching-institutes-delhi" class="pcli-item tt-anim-fadeinup" data-cursor="Read<br>Post">
-									<div class="pcli-item-inner">
-										<div class="pcli-col pcli-col-image">
-											<div class="pcli-image">
-												<img src="../assets/img/project/seo_services_og.jpg" loading="lazy" alt="SEO for coaching institutes Delhi NCR playbook">
-											</div>
-										</div>
-										<div class="pcli-col pcli-col-count">
-											<div class="pcli-count">06</div>
-										</div>
-										<div class="pcli-col pcli-col-caption">
-											<div class="pcli-caption">
-												<h2 class="pcli-title">SEO for Coaching Institutes: A Delhi NCR Playbook</h2>
-												<div class="pcli-categories">
-													<div class="pcli-category">SEO Strategy &amp; Education</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</a>
+							<a href="/blog/meta-ads-clinics-delhi" class="playbook-item tt-anim-fadeinup">
+								<div class="pbi-index-wrap">
+									<span class="pbi-index-label">Play</span>
+									<span class="pbi-index-num">05</span>
+								</div>
+								<div class="pbi-content">
+									<span class="pbi-tag">Meta Ads &amp; Paid Lead Generation</span>
+									<h2 class="pbi-title">How Meta Ads Work for Clinics and Coaching Institutes in Delhi</h2>
+								</div>
+								<span class="pbi-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+							</a>
 
-								<!-- Post 7 -->
-								<a href="/blog/hire-web-developer-delhi" class="pcli-item tt-anim-fadeinup" data-cursor="Read<br>Post">
-									<div class="pcli-item-inner">
-										<div class="pcli-col pcli-col-image">
-											<div class="pcli-image">
-												<img src="../assets/img/project/web_development_og.jpg" loading="lazy" alt="What to ask before hiring a web developer in Delhi">
-											</div>
-										</div>
-										<div class="pcli-col pcli-col-count">
-											<div class="pcli-count">07</div>
-										</div>
-										<div class="pcli-col pcli-col-caption">
-											<div class="pcli-caption">
-												<h2 class="pcli-title">What to Ask Before Hiring a Web Developer in Delhi</h2>
-												<div class="pcli-categories">
-													<div class="pcli-category">Web Development &amp; Hiring Checklists</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</a>
+							<a href="/blog/seo-coaching-institutes-delhi" class="playbook-item tt-anim-fadeinup">
+								<div class="pbi-index-wrap">
+									<span class="pbi-index-label">Play</span>
+									<span class="pbi-index-num">06</span>
+								</div>
+								<div class="pbi-content">
+									<span class="pbi-tag">SEO Strategy &amp; Education</span>
+									<h2 class="pbi-title">SEO for Coaching Institutes: A Delhi NCR Playbook</h2>
+								</div>
+								<span class="pbi-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+							</a>
 
-								<!-- Post 8 -->
-								<a href="/blog/nextjs-vs-react" class="pcli-item tt-anim-fadeinup" data-cursor="Read<br>Post">
-									<div class="pcli-item-inner">
-										<div class="pcli-col pcli-col-image">
-											<div class="pcli-image">
-												<img src="../assets/img/project/web_development_og.jpg" loading="lazy" alt="Next.js vs React for website speed and load time">
-											</div>
-										</div>
-										<div class="pcli-col pcli-col-count">
-											<div class="pcli-count">08</div>
-										</div>
-										<div class="pcli-col pcli-col-caption">
-											<div class="pcli-caption">
-												<h2 class="pcli-title">Next.js vs React: What It Means for Your Website's Speed</h2>
-												<div class="pcli-categories">
-													<div class="pcli-category">Next.js &amp; Frontend Technology</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</a>
+							<a href="/blog/hire-web-developer-delhi" class="playbook-item tt-anim-fadeinup">
+								<div class="pbi-index-wrap">
+									<span class="pbi-index-label">Play</span>
+									<span class="pbi-index-num">07</span>
+								</div>
+								<div class="pbi-content">
+									<span class="pbi-tag">Web Development &amp; Hiring Checklists</span>
+									<h2 class="pbi-title">What to Ask Before Hiring a Web Developer in Delhi</h2>
+								</div>
+								<span class="pbi-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+							</a>
 
-								<!-- Post 9 -->
-								<a href="/blog/instagram-growth-north-delhi" class="pcli-item tt-anim-fadeinup" data-cursor="Read<br>Post">
-									<div class="pcli-item-inner">
-										<div class="pcli-col pcli-col-image">
-											<div class="pcli-image">
-												<img src="../assets/img/project/smm_services_og.jpg" loading="lazy" alt="Instagram growth strategy for local businesses in North Delhi">
-											</div>
-										</div>
-										<div class="pcli-col pcli-col-count">
-											<div class="pcli-count">09</div>
-										</div>
-										<div class="pcli-col pcli-col-caption">
-											<div class="pcli-caption">
-												<h2 class="pcli-title">Instagram Growth Strategy for Local Businesses in North Delhi</h2>
-												<div class="pcli-categories">
-													<div class="pcli-category">SMM &amp; Organic Engagement</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</a>
+							<a href="/blog/nextjs-vs-react" class="playbook-item tt-anim-fadeinup">
+								<div class="pbi-index-wrap">
+									<span class="pbi-index-label">Play</span>
+									<span class="pbi-index-num">08</span>
+								</div>
+								<div class="pbi-content">
+									<span class="pbi-tag">Next.js &amp; Frontend Technology</span>
+									<h2 class="pbi-title">Next.js vs React: What It Means for Your Website's Speed</h2>
+								</div>
+								<span class="pbi-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+							</a>
 
-								<!-- Post 10 -->
-								<a href="/blog/rank-google-business-profile" class="pcli-item tt-anim-fadeinup" data-cursor="Read<br>Post">
-									<div class="pcli-item-inner">
-										<div class="pcli-col pcli-col-image">
-											<div class="pcli-image">
-												<img src="../assets/img/project/seo_services_og.jpg" loading="lazy" alt="How I rank google business profiles fast step by step">
-											</div>
-										</div>
-										<div class="pcli-col pcli-col-count">
-											<div class="pcli-count">10</div>
-										</div>
-										<div class="pcli-col pcli-col-caption">
-											<div class="pcli-caption">
-												<h2 class="pcli-title">How I Rank Google Business Profiles — My Process, Step by Step</h2>
-												<div class="pcli-categories">
-													<div class="pcli-category">Local SEO &amp; GMB Optimization</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</a>
+							<a href="/blog/instagram-growth-north-delhi" class="playbook-item tt-anim-fadeinup">
+								<div class="pbi-index-wrap">
+									<span class="pbi-index-label">Play</span>
+									<span class="pbi-index-num">09</span>
+								</div>
+								<div class="pbi-content">
+									<span class="pbi-tag">SMM &amp; Organic Engagement</span>
+									<h2 class="pbi-title">Instagram Growth Strategy for Local Businesses in North Delhi</h2>
+								</div>
+								<span class="pbi-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+							</a>
 
-							</div>
+							<a href="/blog/rank-google-business-profile" class="playbook-item tt-anim-fadeinup">
+								<div class="pbi-index-wrap">
+									<span class="pbi-index-label">Play</span>
+									<span class="pbi-index-num">10</span>
+								</div>
+								<div class="pbi-content">
+									<span class="pbi-tag">Local SEO &amp; GMB Optimization</span>
+									<h2 class="pbi-title">How I Rank Google Business Profiles — My Process, Step by Step</h2>
+								</div>
+								<span class="pbi-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+							</a>
+
 						</div>
 					</div>
 				</div>
