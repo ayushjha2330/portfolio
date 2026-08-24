@@ -16,7 +16,19 @@
     { "source": "/smm-services.html", "destination": "/smm-services", "permanent": true },
     { "source": "/video-editing.html", "destination": "/video-editing", "permanent": true },
     { "source": "/meta-ads.html", "destination": "/meta-ads", "permanent": true },
-    { "source": "/pricing.html", "destination": "/pricing", "permanent": true }
+    { "source": "/pricing.html", "destination": "/pricing", "permanent": true },
+    { "source": "/burari-north-delhi.html", "destination": "/burari-north-delhi", "permanent": true },
+    { "source": "/blog/index.html", "destination": "/blog", "permanent": true },
+    { "source": "/blog/website-cost-delhi-2026.html", "destination": "/blog/website-cost-delhi-2026", "permanent": true },
+    { "source": "/blog/mern-stack-vs-wordpress.html", "destination": "/blog/mern-stack-vs-wordpress", "permanent": true },
+    { "source": "/blog/rank-google-maps-delhi.html", "destination": "/blog/rank-google-maps-delhi", "permanent": true },
+    { "source": "/blog/freelancer-vs-agency-delhi.html", "destination": "/blog/freelancer-vs-agency-delhi", "permanent": true },
+    { "source": "/blog/meta-ads-clinics-delhi.html", "destination": "/blog/meta-ads-clinics-delhi", "permanent": true },
+    { "source": "/blog/seo-coaching-institutes-delhi.html", "destination": "/blog/seo-coaching-institutes-delhi", "permanent": true },
+    { "source": "/blog/hire-web-developer-delhi.html", "destination": "/blog/hire-web-developer-delhi", "permanent": true },
+    { "source": "/blog/nextjs-vs-react.html", "destination": "/blog/nextjs-vs-react", "permanent": true },
+    { "source": "/blog/instagram-growth-north-delhi.html", "destination": "/blog/instagram-growth-north-delhi", "permanent": true },
+    { "source": "/blog/rank-google-business-profile.html", "destination": "/blog/rank-google-business-profile", "permanent": true }
   ],
   "headers": [
     {
