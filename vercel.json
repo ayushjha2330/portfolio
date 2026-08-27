@@ -17,7 +17,6 @@
     { "source": "/video-editing.html", "destination": "/video-editing", "permanent": true },
     { "source": "/meta-ads.html", "destination": "/meta-ads", "permanent": true },
     { "source": "/pricing.html", "destination": "/pricing", "permanent": true },
-    { "source": "/burari-north-delhi.html", "destination": "/burari-north-delhi", "permanent": true },
     { "source": "/blog/index.html", "destination": "/blog", "permanent": true },
     { "source": "/blog/website-cost-delhi-2026.html", "destination": "/blog/website-cost-delhi-2026", "permanent": true },
     { "source": "/blog/mern-stack-vs-wordpress.html", "destination": "/blog/mern-stack-vs-wordpress", "permanent": true },
