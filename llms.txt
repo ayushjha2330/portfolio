@@ -8,9 +8,8 @@ Ayush Jha is a 19-year-old Full Stack Web Developer and Digital Specialist based
 ## What services does Ayush Jha offer?
 1. **Web Development**: Specializes in the MERN stack (MongoDB, Express, React, Node.js) and Next.js to build fast, scalable, and responsive web applications.
 2. **SEO (Search Engine Optimization)**: Provides technical SEO, on-page optimization, and local SEO services to improve search engine rankings.
-3. **Social Media Marketing (SMM)**: Offers content strategy, profile management, and account growth across platforms like Instagram and LinkedIn.
-4. **Video Editing**: Uses DaVinci Resolve Studio to edit high-retention Reels, YouTube Shorts, long-form videos, and promotional ads.
-5. **Meta Ads**: Manages data-driven Facebook and Instagram ad campaigns to generate leads and maximize ROAS (Return on Ad Spend).
+3. **Google Business Profile (GMB) Management**: Optimizes and manages Google Business Profile for local search visibility, review management, GBP posting, and local citation building.
+4. **Meta Ads**: Manages data-driven Facebook and Instagram ad campaigns to generate leads and maximize ROAS (Return on Ad Spend).
 
 ## Where is Ayush Jha located?
 Ayush Jha is based in Delhi, India (specifically Sarup Vihar, Burari, Delhi), but operates as a service-area business and works with remote clients globally.

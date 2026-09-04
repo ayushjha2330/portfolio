@@ -11,12 +11,16 @@
     { "source": "/faq.html", "destination": "/faq", "permanent": true },
     { "source": "/web-development.html", "destination": "/web-development", "permanent": true },
     { "source": "/seo-services.html", "destination": "/seo-services", "permanent": true },
-    { "source": "/graphic-design", "destination": "/smm-services", "permanent": true },
-    { "source": "/graphic-design.html", "destination": "/smm-services", "permanent": true },
-    { "source": "/smm-services.html", "destination": "/smm-services", "permanent": true },
-    { "source": "/video-editing.html", "destination": "/video-editing", "permanent": true },
+    { "source": "/smm-services", "destination": "/gmb-management", "permanent": true },
+    { "source": "/smm-services.html", "destination": "/gmb-management", "permanent": true },
+    { "source": "/graphic-design", "destination": "/gmb-management", "permanent": true },
+    { "source": "/graphic-design.html", "destination": "/gmb-management", "permanent": true },
+    { "source": "/gmb-management.html", "destination": "/gmb-management", "permanent": true },
     { "source": "/meta-ads.html", "destination": "/meta-ads", "permanent": true },
-    { "source": "/pricing.html", "destination": "/pricing", "permanent": true }
+    { "source": "/video-editing", "destination": "/services", "permanent": true },
+    { "source": "/video-editing.html", "destination": "/services", "permanent": true },
+    { "source": "/pricing", "destination": "/services", "permanent": true },
+    { "source": "/pricing.html", "destination": "/services", "permanent": true }
   ],
   "headers": [
     {
